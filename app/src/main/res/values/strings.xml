@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Spanish Vocabulary</string>
+    <string name="incorrectAnswer">Sorry, Incorrecto. Try Again!</string>
+    <string name="correctAnswer">Muy Bien! Next Question</string>
+    <string name="home">Home</string>
+    <string name="quizEnding">Congratulations! You got %d out of 10 Questions correct.</string>
+</resources>
