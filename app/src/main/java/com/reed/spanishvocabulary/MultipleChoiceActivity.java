@@ -21,11 +21,11 @@ public class MultipleChoiceActivity extends AppCompatActivity {
     private Button mNextQuestionButton;
 
     //Other Variables
-    private Chapter1Vocab mChapter1Vocab = new Chapter1Vocab();
+    //private VocabBook mVocabBook = new VocabBook();
     private int mNumQuestions = 10;
     private int mNumCorrectAns = 0;
     private boolean mAnswerFlag = false;
-    private MultipleChoiceQuestion mQuestion;
+    private MultipleChoiceQuestion mQuestion = new MultipleChoiceQuestion(1);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +41,8 @@ public class MultipleChoiceActivity extends AppCompatActivity {
         mNextQuestionButton = (Button) findViewById(R.id.nextQuestionButton);
         mNextQuestionButton.setVisibility(View.INVISIBLE);
 
-        //Generate First Question
+        //Set Chapter and Generate First Question
+        mQuestion.setChapterNum(1);
         generateQuestion();
 
         mChoice1Button.setOnClickListener(new View.OnClickListener() {
@@ -150,7 +151,8 @@ public class MultipleChoiceActivity extends AppCompatActivity {
     }
 
     private void generateQuestion() {
-        mQuestion = new MultipleChoiceQuestion(mChapter1Vocab);
+        //mQuestion = new MultipleChoiceQuestion(mVocabBook);
+        mQuestion.generateNewQuestion();
         mQuestionTextView.setText(mQuestion.getQuestionText());
         mChoice1Button.setBackgroundColor(Color.parseColor("#FF1B29A5"));
         mChoice2Button.setBackgroundColor(Color.parseColor("#FF1B29A5"));

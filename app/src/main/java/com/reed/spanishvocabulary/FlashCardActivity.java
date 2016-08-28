@@ -9,13 +9,12 @@ import java.util.Random;
 
 public class FlashCardActivity extends AppCompatActivity {
 
-    private Chapter1Vocab mChapter1Vocab = new Chapter1Vocab();
+    private VocabBook mVocabBook = new VocabBook();
     private Button mFlashCardButton;
-    private Button mNextButton;
-    private Button mHomeButton;
     private Boolean mFlip = false;      //to indicate which translation is displayed
     private Random mRandom = new Random();
     private int mCardNum = 0;
+    private int mChapterNum = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,13 +22,13 @@ public class FlashCardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_flash_card);
 
         mFlashCardButton = (Button) findViewById(R.id.flashCardButton);
-        mNextButton = (Button) findViewById(R.id.nextButton);
-        mHomeButton = (Button) findViewById(R.id.homeButton);
+        Button nextButton = (Button) findViewById(R.id.nextButton);
+        Button homeButton = (Button) findViewById(R.id.homeButton);
 
-        mCardNum = mRandom.nextInt(mChapter1Vocab.getLength());
-        mFlashCardButton.setText(mChapter1Vocab.getVocabWord(mCardNum).getSpanishTranslation());
+        mCardNum = mRandom.nextInt(mVocabBook.getLength(getChapterNum()));
+        mFlashCardButton.setText(mVocabBook.getVocabWord(mCardNum).getSpanishTranslation());
 
-        mHomeButton.setOnClickListener(new View.OnClickListener() {
+        homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
@@ -43,7 +42,7 @@ public class FlashCardActivity extends AppCompatActivity {
             }
         });
 
-        mNextButton.setOnClickListener(new View.OnClickListener() {
+        nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 nextFlashCard();
@@ -53,19 +52,27 @@ public class FlashCardActivity extends AppCompatActivity {
 
     private void flipFlashCard(){
         //Displays the English Text if Spanish is currently displayed and vice versa
-        if(mFlip == false) {
+        if(!mFlip) {
             mFlip = true;
-            mFlashCardButton.setText(mChapter1Vocab.getVocabWord(mCardNum).getEnglishTranslation());
+            mFlashCardButton.setText(mVocabBook.getVocabWord(mCardNum).getEnglishTranslation());
         }else {
             mFlip = false;
-            mFlashCardButton.setText(mChapter1Vocab.getVocabWord(mCardNum).getSpanishTranslation());
+            mFlashCardButton.setText(mVocabBook.getVocabWord(mCardNum).getSpanishTranslation());
         }
     }
 
     private void nextFlashCard() {
         //Moves to the next random flash card
-        mCardNum = mRandom.nextInt(mChapter1Vocab.getLength());
+        mCardNum = mRandom.nextInt(mVocabBook.getLength(getChapterNum()));
         mFlip = false;
-        mFlashCardButton.setText(mChapter1Vocab.getVocabWord(mCardNum).getSpanishTranslation());
+        mFlashCardButton.setText(mVocabBook.getVocabWord(mCardNum).getSpanishTranslation());
+    }
+
+    public int getChapterNum() {
+        return mChapterNum;
+    }
+
+    public void setChapterNum(int chapterNum) {
+        mChapterNum = chapterNum;
     }
 }

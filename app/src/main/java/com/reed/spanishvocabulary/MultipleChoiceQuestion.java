@@ -10,13 +10,18 @@ public class MultipleChoiceQuestion {
     private String mCorrectAnswer;
     private String[] mIncorrectAnswer = {"", "", ""};
     private Random mRandomGenerator = new Random();
-    private Chapter1Vocab mList;
+    private VocabBook mVocabBook = new VocabBook();
+    private int mChapterNum = 1;
 
-    public MultipleChoiceQuestion(Chapter1Vocab list) {
-        int randomNumber = mRandomGenerator.nextInt(list.getLength());
-        setList(list);
-        setQuestionText(list.getVocabWord(randomNumber).getSpanishTranslation());
-        setCorrectAnswer(list.getVocabWord(randomNumber).getEnglishTranslation());
+    public MultipleChoiceQuestion(int chapter) {
+        setChapterNum(chapter);
+        generateNewQuestion();
+    }
+
+    public void generateNewQuestion() {
+        int randomNumber = mRandomGenerator.nextInt(mVocabBook.getLength(mChapterNum));
+        setQuestionText(mVocabBook.getVocabWord(randomNumber).getSpanishTranslation());
+        setCorrectAnswer(mVocabBook.getVocabWord(randomNumber).getEnglishTranslation());
         setIncorrectAnswer(0, generateIncorrectAnswer());
         setIncorrectAnswer(1, generateIncorrectAnswer());
         setIncorrectAnswer(2, generateIncorrectAnswer());
@@ -24,22 +29,22 @@ public class MultipleChoiceQuestion {
 
     private String generateIncorrectAnswer() {
         //Potential for Infinite recursion, need to optimize
-        int randomNumber = mRandomGenerator.nextInt(mList.getLength());
-        String answer = mList.getVocabWord(randomNumber).getEnglishTranslation();
-        if(answer == getCorrectAnswer()) {
-            //answer = mList.getVocabWord(randomNumber + 1).getEnglishTranslation();
+        int randomNumber = mRandomGenerator.nextInt(mVocabBook.getLength(mChapterNum));
+        String answer = mVocabBook.getVocabWord(randomNumber).getEnglishTranslation();
+        if(answer.equals(getCorrectAnswer())) {
+            //answer = mVocabBook.getVocabWord(randomNumber + 1).getEnglishTranslation();
             answer = generateIncorrectAnswer();
         }
-        if(answer == getIncorrectAnswer(0)) {
-            //answer = mList.getVocabWord(randomNumber + 1).getEnglishTranslation();
+        if(answer.equals(getIncorrectAnswer(0))) {
+            //answer = mVocabBook.getVocabWord(randomNumber + 1).getEnglishTranslation();
             answer = generateIncorrectAnswer();
         }
-        if(answer == getIncorrectAnswer(1)) {
-            //answer = mList.getVocabWord(randomNumber + 1).getEnglishTranslation();
+        if(answer.equals(getIncorrectAnswer(1))) {
+            //answer = mVocabBook.getVocabWord(randomNumber + 1).getEnglishTranslation();
             answer = generateIncorrectAnswer();
         }
-        if(answer == getIncorrectAnswer(2)) {
-            //answer = mList.getVocabWord(randomNumber + 1).getEnglishTranslation();
+        if(answer.equals(getIncorrectAnswer(2))) {
+            //answer = mVocabBook.getVocabWord(randomNumber + 1).getEnglishTranslation();
             answer = generateIncorrectAnswer();
         }
         return answer;
@@ -69,11 +74,7 @@ public class MultipleChoiceQuestion {
         return mIncorrectAnswer[index];
     }
 
-    public Chapter1Vocab getList() {
-        return mList;
-    }
-
-    public void setList(Chapter1Vocab list) {
-        mList = list;
+    public void setChapterNum(int chapterNum) {
+        mChapterNum = chapterNum;
     }
 }

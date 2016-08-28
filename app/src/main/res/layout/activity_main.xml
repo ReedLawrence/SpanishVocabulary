@@ -36,4 +36,11 @@
         android:text="Welcome to Spanish Flashcards.  Select one of the options below to Begin!"
         android:id="@+id/welcomeTextView" android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" android:textAlignment="center"/>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chapterSpinner"
+        android:layout_above="@+id/multipleCButton"
+        android:layout_centerHorizontal="true"/>
 </RelativeLayout>
