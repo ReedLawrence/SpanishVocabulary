@@ -12,7 +12,7 @@ public class VocabList {
 
     public VocabWord getWord(int index){
         if(index >= mList.size()) {
-            return new VocabWord("Hola", "Hello");
+            return new VocabWord("Size Error", "Size Error");
         } else {
             return (VocabWord) mList.get(index);
         }

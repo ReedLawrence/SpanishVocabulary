@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -25,12 +26,15 @@ public class FlashCardActivity extends AppCompatActivity {
         Intent intent = getIntent();
         setChapterNum(intent.getIntExtra("chapterNumber", 1));
 
+        //Toast to check chapter number
+        Toast.makeText(this, "Chapter Number: " + mChapterNum, Toast.LENGTH_LONG).show();
+
         mFlashCardButton = (Button) findViewById(R.id.flashCardButton);
         Button nextButton = (Button) findViewById(R.id.nextButton);
         Button homeButton = (Button) findViewById(R.id.homeButton);
 
         mCardNum = mRandom.nextInt(mVocabBook.getLength(getChapterNum()));
-        mFlashCardButton.setText(mVocabBook.getVocabWord(mCardNum).getSpanishTranslation());
+        mFlashCardButton.setText(mVocabBook.getVocabWord(getChapterNum(), mCardNum).getSpanishTranslation());
 
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,10 +62,10 @@ public class FlashCardActivity extends AppCompatActivity {
         //Displays the English Text if Spanish is currently displayed and vice versa
         if(!mFlip) {
             mFlip = true;
-            mFlashCardButton.setText(mVocabBook.getVocabWord(mCardNum).getEnglishTranslation());
+            mFlashCardButton.setText(mVocabBook.getVocabWord(getChapterNum(), mCardNum).getEnglishTranslation());
         }else {
             mFlip = false;
-            mFlashCardButton.setText(mVocabBook.getVocabWord(mCardNum).getSpanishTranslation());
+            mFlashCardButton.setText(mVocabBook.getVocabWord(getChapterNum(), mCardNum).getSpanishTranslation());
         }
     }
 
@@ -69,7 +73,7 @@ public class FlashCardActivity extends AppCompatActivity {
         //Moves to the next random flash card
         mCardNum = mRandom.nextInt(mVocabBook.getLength(getChapterNum()));
         mFlip = false;
-        mFlashCardButton.setText(mVocabBook.getVocabWord(mCardNum).getSpanishTranslation());
+        mFlashCardButton.setText(mVocabBook.getVocabWord(getChapterNum(), mCardNum).getSpanishTranslation());
     }
 
     public int getChapterNum() {

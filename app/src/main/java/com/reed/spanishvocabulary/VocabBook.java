@@ -30,7 +30,7 @@ public class VocabBook {
     private VocabList mChapter10 = new VocabList();
     private VocabList mChapter11 = new VocabList();
 
-    public VocabWord getVocabWord(int chapter){
+    public VocabWord getRandomVocabWord(int chapter){
         if(chapter == 1){
             return mChapter1.getRandomWord();
         }
@@ -64,7 +64,44 @@ public class VocabBook {
         if(chapter == 11){
             return mChapter11.getRandomWord();
         }
-        return new VocabWord("Hello","Hola");
+        return new VocabWord("Invalid Chapter","Invalid Chapter");
+    }
+
+    public VocabWord getVocabWord(int chapter, int index) {
+        if(chapter == 1){
+            return mChapter1.getWord(index);
+        }
+        if(chapter == 2){
+            return mChapter2.getWord(index);
+        }
+        if(chapter == 3){
+            return mChapter3.getWord(index);
+        }
+        if(chapter == 4){
+            return mChapter4.getWord(index);
+        }
+        if(chapter == 5){
+            return mChapter5.getWord(index);
+        }
+        if(chapter == 6){
+            return mChapter6.getWord(index);
+        }
+        if(chapter == 7){
+            return mChapter7.getWord(index);
+        }
+        if(chapter == 8){
+            return mChapter8.getWord(index);
+        }
+        if(chapter == 9){
+            return mChapter9.getWord(index);
+        }
+        if(chapter == 10){
+            return mChapter10.getWord(index);
+        }
+        if(chapter == 11){
+            return mChapter11.getWord(index);
+        }
+        return new VocabWord("Invalid Chapter","Invalid Chapter");
     }
 
     public int getLength(int chapter) {

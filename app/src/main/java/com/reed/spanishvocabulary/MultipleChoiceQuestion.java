@@ -20,8 +20,8 @@ public class MultipleChoiceQuestion {
 
     public void generateNewQuestion() {
         int randomNumber = mRandomGenerator.nextInt(mVocabBook.getLength(mChapterNum));
-        setQuestionText(mVocabBook.getVocabWord(randomNumber).getSpanishTranslation());
-        setCorrectAnswer(mVocabBook.getVocabWord(randomNumber).getEnglishTranslation());
+        setQuestionText(mVocabBook.getRandomVocabWord(randomNumber).getSpanishTranslation());
+        setCorrectAnswer(mVocabBook.getRandomVocabWord(randomNumber).getEnglishTranslation());
         setIncorrectAnswer(0, generateIncorrectAnswer());
         setIncorrectAnswer(1, generateIncorrectAnswer());
         setIncorrectAnswer(2, generateIncorrectAnswer());
@@ -30,21 +30,21 @@ public class MultipleChoiceQuestion {
     private String generateIncorrectAnswer() {
         //Potential for Infinite recursion, need to optimize
         int randomNumber = mRandomGenerator.nextInt(mVocabBook.getLength(mChapterNum));
-        String answer = mVocabBook.getVocabWord(randomNumber).getEnglishTranslation();
+        String answer = mVocabBook.getRandomVocabWord(randomNumber).getEnglishTranslation();
         if(answer.equals(getCorrectAnswer())) {
-            //answer = mVocabBook.getVocabWord(randomNumber + 1).getEnglishTranslation();
+            //answer = mVocabBook.getRandomVocabWord(randomNumber + 1).getEnglishTranslation();
             answer = generateIncorrectAnswer();
         }
         if(answer.equals(getIncorrectAnswer(0))) {
-            //answer = mVocabBook.getVocabWord(randomNumber + 1).getEnglishTranslation();
+            //answer = mVocabBook.getRandomVocabWord(randomNumber + 1).getEnglishTranslation();
             answer = generateIncorrectAnswer();
         }
         if(answer.equals(getIncorrectAnswer(1))) {
-            //answer = mVocabBook.getVocabWord(randomNumber + 1).getEnglishTranslation();
+            //answer = mVocabBook.getRandomVocabWord(randomNumber + 1).getEnglishTranslation();
             answer = generateIncorrectAnswer();
         }
         if(answer.equals(getIncorrectAnswer(2))) {
-            //answer = mVocabBook.getVocabWord(randomNumber + 1).getEnglishTranslation();
+            //answer = mVocabBook.getRandomVocabWord(randomNumber + 1).getEnglishTranslation();
             answer = generateIncorrectAnswer();
         }
         return answer;
