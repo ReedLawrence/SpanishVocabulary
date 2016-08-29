@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Switch to Flash Card Activity
                 Intent intent = new Intent(MainActivity.this, FlashCardActivity.class);
+                intent.putExtra("chapterNumber", getChapterNumber());
                 startActivity(intent);
             }
         });
@@ -69,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Switch to Multiple Choice Activity
                 Intent intent = new Intent(MainActivity.this, MultipleChoiceActivity.class);
+                intent.putExtra("chapterNumber", getChapterNumber());
                 startActivity(intent);
             }
         });

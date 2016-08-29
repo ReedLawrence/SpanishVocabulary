@@ -1,5 +1,6 @@
 package com.reed.spanishvocabulary;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -31,6 +32,9 @@ public class MultipleChoiceActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_multiple_choice);
+
+        Intent intent = getIntent();
+        mQuestion.setChapterNum(intent.getIntExtra("chapterNumber", 1));
 
         //Initialize View Variables
         mQuestionTextView = (TextView) findViewById(R.id.questionTextView);

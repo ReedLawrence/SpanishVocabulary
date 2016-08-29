@@ -1,5 +1,6 @@
 package com.reed.spanishvocabulary;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,6 +21,9 @@ public class FlashCardActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flash_card);
+
+        Intent intent = getIntent();
+        setChapterNum(intent.getIntExtra("chapterNumber", 1));
 
         mFlashCardButton = (Button) findViewById(R.id.flashCardButton);
         Button nextButton = (Button) findViewById(R.id.nextButton);
