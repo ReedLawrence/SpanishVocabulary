@@ -27,7 +27,7 @@ public class FlashCardActivity extends AppCompatActivity {
         setChapterNum(intent.getIntExtra("chapterNumber", 1));
 
         //Toast to check chapter number
-        Toast.makeText(this, "Chapter Number: " + mChapterNum, Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, "Chapter Number: " + mChapterNum, Toast.LENGTH_LONG).show();
 
         mFlashCardButton = (Button) findViewById(R.id.flashCardButton);
         Button nextButton = (Button) findViewById(R.id.nextButton);

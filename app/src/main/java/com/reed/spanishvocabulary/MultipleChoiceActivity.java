@@ -116,7 +116,7 @@ public class MultipleChoiceActivity extends AppCompatActivity {
         mNextQuestionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(mNumQuestions<=0) {
+                if(mNumQuestions<=1) {
                     mNextQuestionButton.setVisibility(View.INVISIBLE);
                     mChoice1Button.setVisibility(View.INVISIBLE);
                     mChoice2Button.setVisibility(View.INVISIBLE);

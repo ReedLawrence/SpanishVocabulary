@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 setChapterNumber(parent.getSelectedItemPosition() + 1);
-                Toast.makeText(MainActivity.this, "Chapter Number: " + getChapterNumber(), Toast.LENGTH_LONG).show();
+                //Toast.makeText(MainActivity.this, "Chapter Number: " + getChapterNumber(), Toast.LENGTH_LONG).show();
             }
 
             @Override

@@ -15,18 +15,21 @@
         android:layout_height="wrap_content"
         android:text="Home"
         android:id="@+id/homeButton" android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true" android:layout_alignParentStart="true"/>
+        android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+        android:textSize="20sp"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Flash Card Text"
         android:id="@+id/flashCardButton"
         android:layout_above="@+id/nextButton" android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" android:layout_alignParentTop="true"/>
+        android:layout_alignParentStart="true" android:layout_alignParentTop="true"
+        android:textSize="24sp"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Next"
         android:id="@+id/nextButton" android:layout_above="@+id/homeButton"
-        android:layout_alignParentLeft="true" android:layout_alignParentStart="true"/>
+        android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+        android:textSize="20sp"/>
 </RelativeLayout>

@@ -4,19 +4,6 @@ package com.reed.spanishvocabulary;
  * Created by reed_ on 8/27/2016.
  */
 public class VocabBook {
-    /*
-    private Chapter1Vocab mChapter1Vocab = new Chapter1Vocab();
-    private Chapter2Vocab mChapter2Vocab = new Chapter2Vocab();
-    private Chapter3Vocab mChapter3Vocab = new Chapter3Vocab();
-    private Chapter4Vocab mChapter4Vocab = new Chapter4Vocab();
-    private Chapter5Vocab mChapter5Vocab = new Chapter5Vocab();
-    private Chapter6Vocab mChapter6Vocab = new Chapter6Vocab();
-    private Chapter7Vocab mChapter7Vocab = new Chapter7Vocab();
-    private Chapter8Vocab mChapter8Vocab = new Chapter8Vocab();
-    private Chapter9Vocab mChapter9Vocab = new Chapter9Vocab();
-    private Chapter10Vocab mChapter10Vocab = new Chapter10Vocab();
-    private Chapter11Vocab mChapter11Vocab = new Chapter11Vocab();
-    */
 
     private VocabList mChapter1 = new VocabList();
     private VocabList mChapter2 = new VocabList();
