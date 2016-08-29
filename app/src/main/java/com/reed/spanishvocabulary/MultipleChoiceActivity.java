@@ -33,6 +33,7 @@ public class MultipleChoiceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_multiple_choice);
 
+        //Set Chapter number from User Selection on Previous Activity
         Intent intent = getIntent();
         mQuestion.setChapterNum(intent.getIntExtra("chapterNumber", 1));
 
@@ -46,7 +47,7 @@ public class MultipleChoiceActivity extends AppCompatActivity {
         mNextQuestionButton.setVisibility(View.INVISIBLE);
 
         //Set Chapter and Generate First Question
-        mQuestion.setChapterNum(1);
+        //mQuestion.setChapterNum(1);
         generateQuestion();
 
         mChoice1Button.setOnClickListener(new View.OnClickListener() {

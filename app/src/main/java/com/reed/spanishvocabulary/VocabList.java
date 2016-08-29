@@ -25,9 +25,12 @@ public class VocabList {
     public int size() {
         return mList.size();
     }
-
+    /*
+    //Both Flash Card Activity and Multiple Choice use their own
+    //Random Generators, unnecessary to have them here
     public VocabWord getRandomWord() {
         int randomNum = mRandom.nextInt(mList.size());
         return (VocabWord) mList.get(randomNum);
     }
+    */
 }
