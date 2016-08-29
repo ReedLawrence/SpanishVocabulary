@@ -98,7 +98,7 @@ public class MultipleChoiceActivity extends AppCompatActivity {
         mChoice4Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(mNumQuestions == 0) {
+                if(mNumQuestions <= 1) {
                     finish();
                 }
                 if(mChoice4Button.getText() == mQuestion.getCorrectAnswer()) {
