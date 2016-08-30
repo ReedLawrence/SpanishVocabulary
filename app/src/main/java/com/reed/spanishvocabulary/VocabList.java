@@ -1,14 +1,15 @@
 package com.reed.spanishvocabulary;
 
-import java.util.Random;
 import java.util.Vector;
 
 /**
  * Created by reed_ on 8/27/2016.
+ * Class is the container for the different chapters of vocab lists
+ * Vector should only contain VocabWords
  */
 public class VocabList {
     private Vector mList = new Vector();
-    private Random mRandom = new Random();
+    //private Random mRandom = new Random();
 
     public VocabWord getWord(int index){
         if(index >= mList.size()) {

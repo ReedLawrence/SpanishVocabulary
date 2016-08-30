@@ -2,6 +2,7 @@ package com.reed.spanishvocabulary;
 
 /**
  * Created by Reed on 7/27/2016.
+ * Class is the object that forms the array for the VocabList
  */
 public class VocabWord {
 

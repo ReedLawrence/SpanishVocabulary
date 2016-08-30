@@ -4,6 +4,7 @@ import java.util.Random;
 
 /**
  * Created by Reed on 7/27/2016.
+ * Class generates and stores a single multiple choice question
  */
 public class MultipleChoiceQuestion {
     private String mQuestionText;

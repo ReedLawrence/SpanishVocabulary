@@ -2,6 +2,7 @@ package com.reed.spanishvocabulary;
 
 /**
  * Created by reed_ on 8/27/2016.
+ * Class acts as the index for the different Vocab Chapters
  */
 public class VocabBook {
 

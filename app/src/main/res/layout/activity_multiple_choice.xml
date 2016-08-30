@@ -45,7 +45,8 @@
         android:text="Question to be asked goes here!"
         android:id="@+id/questionTextView" android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" android:paddingTop="40dp"
-        android:paddingLeft="10dp" android:paddingRight="10dp"/>
+        android:paddingLeft="10dp" android:paddingRight="10dp"
+        android:textSize="26sp"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
