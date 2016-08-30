@@ -59,7 +59,7 @@ public class MultipleChoiceActivity extends AppCompatActivity {
                     mAnswerFlag = true;
                 } else {
                     mNextQuestionButton.setText(R.string.incorrectAnswer);
-                    mChoice1Button.setBackgroundColor(Color.RED);
+                    mChoice1Button.setBackgroundResource(R.drawable.bg_choice_button_red);
                     mAnswerFlag = false;
                 }
                 displayNextQuestionButton();
@@ -74,7 +74,7 @@ public class MultipleChoiceActivity extends AppCompatActivity {
                     mAnswerFlag = true;
                 } else {
                     mNextQuestionButton.setText(R.string.incorrectAnswer);
-                    mChoice2Button.setBackgroundColor(Color.RED);
+                    mChoice2Button.setBackgroundResource(R.drawable.bg_choice_button_red);
                     mAnswerFlag = false;
                 }
                 displayNextQuestionButton();
@@ -89,7 +89,7 @@ public class MultipleChoiceActivity extends AppCompatActivity {
                     mAnswerFlag = true;
                 } else {
                     mNextQuestionButton.setText(R.string.incorrectAnswer);
-                    mChoice3Button.setBackgroundColor(Color.RED);
+                    mChoice3Button.setBackgroundResource(R.drawable.bg_choice_button_red);
                     mAnswerFlag = false;
                 }
                 displayNextQuestionButton();
@@ -107,7 +107,7 @@ public class MultipleChoiceActivity extends AppCompatActivity {
                     mAnswerFlag = true;
                 } else {
                     mNextQuestionButton.setText(R.string.incorrectAnswer);
-                    mChoice4Button.setBackgroundColor(Color.RED);
+                    mChoice4Button.setBackgroundResource(R.drawable.bg_choice_button_red);
                     mAnswerFlag = false;
                 }
                 displayNextQuestionButton();
@@ -159,10 +159,10 @@ public class MultipleChoiceActivity extends AppCompatActivity {
         //mQuestion = new MultipleChoiceQuestion(mVocabBook);
         mQuestion.generateNewQuestion();
         mQuestionTextView.setText(mQuestion.getQuestionText());
-        mChoice1Button.setBackgroundColor(Color.parseColor("#FF1B29A5"));
-        mChoice2Button.setBackgroundColor(Color.parseColor("#FF1B29A5"));
-        mChoice3Button.setBackgroundColor(Color.parseColor("#FF1B29A5"));
-        mChoice4Button.setBackgroundColor(Color.parseColor("#FF1B29A5"));
+        mChoice1Button.setBackgroundResource(R.drawable.bg_choice_button_blue);
+        mChoice2Button.setBackgroundResource(R.drawable.bg_choice_button_blue);
+        mChoice3Button.setBackgroundResource(R.drawable.bg_choice_button_blue);
+        mChoice4Button.setBackgroundResource(R.drawable.bg_choice_button_blue);
         Random randomGenerator = new Random();
         int correctAns = randomGenerator.nextInt(4);
         int incorrectIndex = 0;

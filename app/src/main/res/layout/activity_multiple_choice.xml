@@ -22,16 +22,18 @@
         android:textSize="26sp"
         android:layout_alignParentTop="true"
         android:layout_above="@+id/nextQuestionButton"
-        android:background="#00FFFFFF"/>
+        android:background="#00FFFFFF"
+        android:textAlignment="center"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Next Question"
         android:id="@+id/nextQuestionButton"
-        android:textColor="#FFFFFFFF" android:background="#1b29a5"
+        android:textColor="#FFFFFFFF" android:background="@drawable/bg_choice_button_blue"
         android:layout_above="@+id/linearLayout"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="5dp"/>
 
     <LinearLayout
         android:orientation="vertical"
@@ -53,8 +55,10 @@
                 android:text="Choice 1"
                 android:id="@+id/choice1Button" android:layout_above="@+id/choice2Button"
                 android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
-                android:textColor="#FFFFFFFF" android:background="#FF1B29A5"
-                android:layout_weight="1"/>
+                android:textColor="#FFFFFFFF" android:background="@drawable/bg_choice_button_blue"
+                android:layout_weight="1"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"/>
 
             <Button
                 android:layout_width="match_parent"
@@ -62,8 +66,10 @@
                 android:text="Choice 2"
                 android:id="@+id/choice2Button" android:layout_above="@+id/choice3Button"
                 android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
-                android:textColor="#FFFFFFFF" android:background="#FF1B29A5"
-                android:layout_weight="1"/>
+                android:textColor="#FFFFFFFF" android:background="@drawable/bg_choice_button_blue"
+                android:layout_weight="1"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="1dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -78,8 +84,10 @@
                 android:text="Choice 3"
                 android:id="@+id/choice3Button" android:layout_above="@+id/choice4Button"
                 android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
-                android:textColor="#FFFFFFFF" android:background="#FF1B29A5"
-                android:layout_weight="1"/>
+                android:textColor="#FFFFFFFF" android:background="@drawable/bg_choice_button_blue"
+                android:layout_weight="1"
+                android:layout_marginTop="1dp"
+                android:layout_marginRight="1dp"/>
 
             <Button
                 android:layout_width="match_parent"
@@ -87,8 +95,10 @@
                 android:text="Choice 4"
                 android:id="@+id/choice4Button" android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
-                android:textColor="#FFFFFFFF" android:background="#FF1B29A5"
-                android:layout_weight="1"/>
+                android:textColor="#FFFFFFFF" android:background="@drawable/bg_choice_button_blue"
+                android:layout_weight="1"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="1dp"/>
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
