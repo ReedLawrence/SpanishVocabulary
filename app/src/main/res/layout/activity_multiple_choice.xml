@@ -8,50 +8,87 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.reed.spanishvocabulary.MultipleChoiceActivity">
+    tools:context="com.reed.spanishvocabulary.MultipleChoiceActivity"
+    android:background="@drawable/bg_radius_sunset">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Choice 4"
-        android:id="@+id/choice4Button" android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
-        android:textColor="#FFFFFFFF" android:background="#FF1B29A5"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Choice 3"
-        android:id="@+id/choice3Button" android:layout_above="@+id/choice4Button"
-        android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
-        android:textColor="#FFFFFFFF" android:background="#FF1B29A5"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Choice 2"
-        android:id="@+id/choice2Button" android:layout_above="@+id/choice3Button"
-        android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
-        android:textColor="#FFFFFFFF" android:background="#FF1B29A5"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Choice 1"
-        android:id="@+id/choice1Button" android:layout_above="@+id/choice2Button"
-        android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
-        android:textColor="#FFFFFFFF" android:background="#FF1B29A5"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Question to be asked goes here!"
-        android:id="@+id/questionTextView" android:layout_alignParentTop="true"
+        android:id="@+id/questionTextView"
         android:layout_centerHorizontal="true" android:paddingTop="40dp"
         android:paddingLeft="10dp" android:paddingRight="10dp"
-        android:textSize="26sp"/>
+        android:textSize="26sp"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/nextQuestionButton"
+        android:background="#00FFFFFF"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Next Question"
-        android:id="@+id/nextQuestionButton" android:layout_above="@+id/choice1Button"
-        android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
-        android:textColor="#FFFFFFFF" android:background="#1b29a5"/>
+        android:id="@+id/nextQuestionButton"
+        android:textColor="#FFFFFFFF" android:background="#1b29a5"
+        android:layout_above="@+id/linearLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/linearLayout">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Choice 1"
+                android:id="@+id/choice1Button" android:layout_above="@+id/choice2Button"
+                android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                android:textColor="#FFFFFFFF" android:background="#FF1B29A5"
+                android:layout_weight="1"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Choice 2"
+                android:id="@+id/choice2Button" android:layout_above="@+id/choice3Button"
+                android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                android:textColor="#FFFFFFFF" android:background="#FF1B29A5"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Choice 3"
+                android:id="@+id/choice3Button" android:layout_above="@+id/choice4Button"
+                android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                android:textColor="#FFFFFFFF" android:background="#FF1B29A5"
+                android:layout_weight="1"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Choice 4"
+                android:id="@+id/choice4Button" android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+                android:textColor="#FFFFFFFF" android:background="#FF1B29A5"
+                android:layout_weight="1"/>
+        </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>
