@@ -1,4 +1,4 @@
-package com.reed.spanishvocabulary;
+package com.reed.spanishvocabulary.UI;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+
+import com.reed.spanishvocabulary.R;
 
 import java.util.ArrayList;
 import java.util.List;

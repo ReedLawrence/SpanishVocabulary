@@ -4,4 +4,5 @@
     <string name="correctAnswer">Muy Bien! Next Question</string>
     <string name="home">Home</string>
     <string name="quizEnding">Congratulations! You got %d out of 10 Questions correct.</string>
+    <string name="title_activity_hangman">HangmanActivity</string>
 </resources>

@@ -1,10 +1,13 @@
-package com.reed.spanishvocabulary;
+package com.reed.spanishvocabulary.UI;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.reed.spanishvocabulary.R;
+import com.reed.spanishvocabulary.Model.VocabBook;
 
 import java.util.Random;
 

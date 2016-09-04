@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.reed.spanishvocabulary.MultipleChoiceActivity"
+    tools:context=".UI.MultipleChoiceActivity"
     android:background="@drawable/bg_radius_sunset">
 
     <TextView
@@ -23,7 +23,8 @@
         android:layout_alignParentTop="true"
         android:layout_above="@+id/nextQuestionButton"
         android:background="#00FFFFFF"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:gravity="center_vertical|center_horizontal"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

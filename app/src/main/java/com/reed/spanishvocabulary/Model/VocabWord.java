@@ -1,4 +1,4 @@
-package com.reed.spanishvocabulary;
+package com.reed.spanishvocabulary.Model;
 
 /**
  * Created by Reed on 7/27/2016.

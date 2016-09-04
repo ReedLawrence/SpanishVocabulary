@@ -1,4 +1,4 @@
-package com.reed.spanishvocabulary;
+package com.reed.spanishvocabulary.Model;
 
 import java.util.Random;
 

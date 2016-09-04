@@ -1,13 +1,15 @@
-package com.reed.spanishvocabulary;
+package com.reed.spanishvocabulary.UI;
 
 import android.content.Intent;
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.reed.spanishvocabulary.Model.MultipleChoiceQuestion;
+import com.reed.spanishvocabulary.R;
 
 import java.util.Random;
 
