@@ -1,5 +1,6 @@
 package com.reed.spanishvocabulary.Model;
 
+import java.util.Random;
 import java.util.Vector;
 
 /**
@@ -9,7 +10,7 @@ import java.util.Vector;
  */
 public class VocabList {
     private Vector mList = new Vector();
-    //private Random mRandom = new Random();
+    private Random mRandom = new Random();
 
     public VocabWord getWord(int index){
         if(index >= mList.size()) {
@@ -26,12 +27,12 @@ public class VocabList {
     public int size() {
         return mList.size();
     }
-    /*
+
     //Both Flash Card Activity and Multiple Choice use their own
     //Random Generators, unnecessary to have them here
     public VocabWord getRandomWord() {
         int randomNum = mRandom.nextInt(mList.size());
         return (VocabWord) mList.get(randomNum);
     }
-    */
+
 }

@@ -17,7 +17,7 @@ public class VocabBook {
     private VocabList mChapter9 = new VocabList();
     private VocabList mChapter10 = new VocabList();
     private VocabList mChapter11 = new VocabList();
-/*
+
     //Both Flash Card Activity and Multiple Choice use their own
     //Random Generators, unnecessary to have them here
     public VocabWord getRandomVocabWord(int chapter){
@@ -56,7 +56,7 @@ public class VocabBook {
         }
         return new VocabWord("Invalid Chapter","Invalid Chapter");
     }
-*/
+
     public VocabWord getVocabWord(int chapter, int index) {
         if(chapter == 1){
             return mChapter1.getWord(index);
