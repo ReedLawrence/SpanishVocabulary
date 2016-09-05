@@ -329,6 +329,366 @@ public class HangmanActivity extends AppCompatActivity {
                 }
             }
         });
+        mDText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!mHangmanGame.isPLayed(12)) {
+                    mHangmanGame.setPlayed(12);
+                    String newQuestionText = mHangmanGame.checkForLetter('d');
+                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                        mLives--;
+                        if(mLives <= 0) {
+                            gameOver();
+                        }
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
+                    }
+                    mQText.setTextColor(Color.parseColor("#111111"));
+                }
+            }
+        });
+        mFText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!mHangmanGame.isPLayed(13)) {
+                    mHangmanGame.setPlayed(13);
+                    String newQuestionText = mHangmanGame.checkForLetter('f');
+                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                        mLives--;
+                        if(mLives <= 0) {
+                            gameOver();
+                        }
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
+                    }
+                    mQText.setTextColor(Color.parseColor("#111111"));
+                }
+            }
+        });
+        mGText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!mHangmanGame.isPLayed(14)) {
+                    mHangmanGame.setPlayed(14);
+                    String newQuestionText = mHangmanGame.checkForLetter('g');
+                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                        mLives--;
+                        if(mLives <= 0) {
+                            gameOver();
+                        }
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
+                    }
+                    mQText.setTextColor(Color.parseColor("#111111"));
+                }
+            }
+        });
+        mHText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!mHangmanGame.isPLayed(15)) {
+                    mHangmanGame.setPlayed(15);
+                    String newQuestionText = mHangmanGame.checkForLetter('h');
+                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                        mLives--;
+                        if(mLives <= 0) {
+                            gameOver();
+                        }
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
+                    }
+                    mQText.setTextColor(Color.parseColor("#111111"));
+                }
+            }
+        });
+        mJText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!mHangmanGame.isPLayed(16)) {
+                    mHangmanGame.setPlayed(16);
+                    String newQuestionText = mHangmanGame.checkForLetter('j');
+                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                        mLives--;
+                        if(mLives <= 0) {
+                            gameOver();
+                        }
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
+                    }
+                    mQText.setTextColor(Color.parseColor("#111111"));
+                }
+            }
+        });
+        mKText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!mHangmanGame.isPLayed(17)) {
+                    mHangmanGame.setPlayed(17);
+                    String newQuestionText = mHangmanGame.checkForLetter('k');
+                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                        mLives--;
+                        if(mLives <= 0) {
+                            gameOver();
+                        }
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
+                    }
+                    mQText.setTextColor(Color.parseColor("#111111"));
+                }
+            }
+        });
+        mLText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!mHangmanGame.isPLayed(18)) {
+                    mHangmanGame.setPlayed(18);
+                    String newQuestionText = mHangmanGame.checkForLetter('l');
+                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                        mLives--;
+                        if(mLives <= 0) {
+                            gameOver();
+                        }
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
+                    }
+                    mQText.setTextColor(Color.parseColor("#111111"));
+                }
+            }
+        });
+        mZText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!mHangmanGame.isPLayed(19)) {
+                    mHangmanGame.setPlayed(19);
+                    String newQuestionText = mHangmanGame.checkForLetter('z');
+                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                        mLives--;
+                        if(mLives <= 0) {
+                            gameOver();
+                        }
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
+                    }
+                    mQText.setTextColor(Color.parseColor("#111111"));
+                }
+            }
+        });
+        mXText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!mHangmanGame.isPLayed(20)) {
+                    mHangmanGame.setPlayed(20);
+                    String newQuestionText = mHangmanGame.checkForLetter('x');
+                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                        mLives--;
+                        if(mLives <= 0) {
+                            gameOver();
+                        }
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
+                    }
+                    mQText.setTextColor(Color.parseColor("#111111"));
+                }
+            }
+        });
+        mCText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!mHangmanGame.isPLayed(21)) {
+                    mHangmanGame.setPlayed(21);
+                    String newQuestionText = mHangmanGame.checkForLetter('c');
+                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                        mLives--;
+                        if(mLives <= 0) {
+                            gameOver();
+                        }
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
+                    }
+                    mQText.setTextColor(Color.parseColor("#111111"));
+                }
+            }
+        });
+        mVText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!mHangmanGame.isPLayed(22)) {
+                    mHangmanGame.setPlayed(22);
+                    String newQuestionText = mHangmanGame.checkForLetter('v');
+                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                        mLives--;
+                        if(mLives <= 0) {
+                            gameOver();
+                        }
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
+                    }
+                    mQText.setTextColor(Color.parseColor("#111111"));
+                }
+            }
+        });
+        mBText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!mHangmanGame.isPLayed(23)) {
+                    mHangmanGame.setPlayed(23);
+                    String newQuestionText = mHangmanGame.checkForLetter('b');
+                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                        mLives--;
+                        if(mLives <= 0) {
+                            gameOver();
+                        }
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
+                    }
+                    mQText.setTextColor(Color.parseColor("#111111"));
+                }
+            }
+        });
+        mNText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!mHangmanGame.isPLayed(24)) {
+                    mHangmanGame.setPlayed(24);
+                    String newQuestionText = mHangmanGame.checkForLetter('n');
+                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                        mLives--;
+                        if(mLives <= 0) {
+                            gameOver();
+                        }
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
+                    }
+                    mQText.setTextColor(Color.parseColor("#111111"));
+                }
+            }
+        });
+        mMText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!mHangmanGame.isPLayed(25)) {
+                    mHangmanGame.setPlayed(25);
+                    String newQuestionText = mHangmanGame.checkForLetter('m');
+                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                        mLives--;
+                        if(mLives <= 0) {
+                            gameOver();
+                        }
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
+                    }
+                    mQText.setTextColor(Color.parseColor("#111111"));
+                }
+            }
+        });
+        mEnieText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!mHangmanGame.isPLayed(26)) {
+                    mHangmanGame.setPlayed(26);
+                    String newQuestionText = mHangmanGame.checkForLetter('ñ');
+                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                        mLives--;
+                        if(mLives <= 0) {
+                            gameOver();
+                        }
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
+                    }
+                    mQText.setTextColor(Color.parseColor("#111111"));
+                }
+            }
+        });
+        mAAccentText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!mHangmanGame.isPLayed(27)) {
+                    mHangmanGame.setPlayed(27);
+                    String newQuestionText = mHangmanGame.checkForLetter('á');
+                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                        mLives--;
+                        if(mLives <= 0) {
+                            gameOver();
+                        }
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
+                    }
+                    mQText.setTextColor(Color.parseColor("#111111"));
+                }
+            }
+        });
+        mEAccentText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!mHangmanGame.isPLayed(28)) {
+                    mHangmanGame.setPlayed(28);
+                    String newQuestionText = mHangmanGame.checkForLetter('é');
+                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                        mLives--;
+                        if(mLives <= 0) {
+                            gameOver();
+                        }
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
+                    }
+                    mQText.setTextColor(Color.parseColor("#111111"));
+                }
+            }
+        });
+        mIAccentText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!mHangmanGame.isPLayed(29)) {
+                    mHangmanGame.setPlayed(29);
+                    String newQuestionText = mHangmanGame.checkForLetter('í');
+                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                        mLives--;
+                        if(mLives <= 0) {
+                            gameOver();
+                        }
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
+                    }
+                    mQText.setTextColor(Color.parseColor("#111111"));
+                }
+            }
+        });
+        mOAccentText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!mHangmanGame.isPLayed(30)) {
+                    mHangmanGame.setPlayed(30);
+                    String newQuestionText = mHangmanGame.checkForLetter('ó');
+                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                        mLives--;
+                        if(mLives <= 0) {
+                            gameOver();
+                        }
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
+                    }
+                    mQText.setTextColor(Color.parseColor("#111111"));
+                }
+            }
+        });
+        mUAccentText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!mHangmanGame.isPLayed(31)) {
+                    mHangmanGame.setPlayed(31);
+                    String newQuestionText = mHangmanGame.checkForLetter('ú');
+                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                        mLives--;
+                        if(mLives <= 0) {
+                            gameOver();
+                        }
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
+                    }
+                    mQText.setTextColor(Color.parseColor("#111111"));
+                }
+            }
+        });
     }
     //Game Over
     private void gameOver() {
