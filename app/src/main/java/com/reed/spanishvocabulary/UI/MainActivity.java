@@ -23,8 +23,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button flashCardButton = (Button) findViewById(R.id.flashCardButton);
-        Button multipleCButton = (Button) findViewById(R.id.multipleCButton);
+        Button multipleCButton = (Button) findViewById(R.id.multipleChoiceButton);
         Spinner chapterSpinner = (Spinner) findViewById(R.id.chapterSpinner);
+        Button hangmanButton = (Button) findViewById(R.id.hangmanButton);
 
         //chapterSpinner.setOnClickListener(this);
 
@@ -73,6 +74,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Switch to Multiple Choice Activity
                 Intent intent = new Intent(MainActivity.this, MultipleChoiceActivity.class);
+                intent.putExtra("chapterNumber", getChapterNumber());
+                startActivity(intent);
+            }
+        });
+
+        hangmanButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, HangmanActivity.class);
                 intent.putExtra("chapterNumber", getChapterNumber());
                 startActivity(intent);
             }

@@ -5,4 +5,9 @@
     <string name="home">Home</string>
     <string name="quizEnding">Congratulations! You got %d out of 10 Questions correct.</string>
     <string name="title_activity_hangman">HangmanActivity</string>
+    <string name="tree_logo">Tree Logo</string>
+    <string name="welcome_text">Welcome to Spanish Flashcards. Select one of the options below to Begin!</string>
+    <string name="hangman">Hangman</string>
+    <string name="multiple_choice">Multiple Choice</string>
+    <string name="flash_cards">Flash Cards</string>
 </resources>

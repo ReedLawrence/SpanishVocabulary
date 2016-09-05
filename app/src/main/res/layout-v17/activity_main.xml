@@ -34,7 +34,7 @@
         android:layout_alignParentStart="false"
         android:textSize="16sp"
         android:layout_alignParentRight="true"
-        android:layout_above="@+id/chapterSpinner"/>
+        android:layout_above="@+id/flashCardButton"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -65,16 +65,5 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:text="@string/flash_cards"/>
-
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/chapterSpinner"
-        android:layout_above="@+id/flashCardButton"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"/>
 
 </RelativeLayout>
