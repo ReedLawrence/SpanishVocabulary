@@ -49,6 +49,8 @@ public class HangmanActivity extends AppCompatActivity {
     private HangmanGame mHangmanGame;
     private int mLives = 6;
     private TextView mHangmanTextView;
+    private TextView mGameOverText;
+    private Button mPlayAgain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,7 +92,10 @@ public class HangmanActivity extends AppCompatActivity {
         mHangmanTextView = (TextView) findViewById(R.id.hangmanTextView);
 
         Button mHome = (Button) findViewById(R.id.homeButton);
-        Button mPlayAgain = (Button) findViewById(R.id.playAgainButton);
+        mPlayAgain = (Button) findViewById(R.id.playAgainButton);
+        mGameOverText = (TextView) findViewById(R.id.gameOverText);
+        mPlayAgain.setVisibility(View.INVISIBLE);
+        mGameOverText.setVisibility(View.INVISIBLE);
 
         Intent intent = getIntent();
         mHangmanGame = new HangmanGame(intent.getIntExtra("chapterNumber", 1));
@@ -106,6 +111,9 @@ public class HangmanActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mHangmanGame.resetGame();
+                toggleLetterButtons();
+                mGameOverText.setVisibility(View.INVISIBLE);
+                mPlayAgain.setVisibility(View.INVISIBLE);
                 mLives = 6;
             }
         });
@@ -692,6 +700,78 @@ public class HangmanActivity extends AppCompatActivity {
     }
     //Game Over
     private void gameOver() {
+        toggleLetterButtons();
+        mGameOverText.setVisibility(View.VISIBLE);
+        mPlayAgain.setVisibility(View.VISIBLE);
+    }
 
+    private void toggleLetterButtons() {
+        if(mQText.getVisibility() == View.VISIBLE) {
+            mQText.setVisibility(View.INVISIBLE);
+            mWText.setVisibility(View.INVISIBLE);
+            mEText.setVisibility(View.INVISIBLE);
+            mRText.setVisibility(View.INVISIBLE);
+            mTText.setVisibility(View.INVISIBLE);
+            mYText.setVisibility(View.INVISIBLE);
+            mUText.setVisibility(View.INVISIBLE);
+            mIText.setVisibility(View.INVISIBLE);
+            mOText.setVisibility(View.INVISIBLE);
+            mPText.setVisibility(View.INVISIBLE);
+            mAText.setVisibility(View.INVISIBLE);
+            mSText.setVisibility(View.INVISIBLE);
+            mDText.setVisibility(View.INVISIBLE);
+            mFText.setVisibility(View.INVISIBLE);
+            mGText.setVisibility(View.INVISIBLE);
+            mHText.setVisibility(View.INVISIBLE);
+            mJText.setVisibility(View.INVISIBLE);
+            mKText.setVisibility(View.INVISIBLE);
+            mLText.setVisibility(View.INVISIBLE);
+            mZText.setVisibility(View.INVISIBLE);
+            mXText.setVisibility(View.INVISIBLE);
+            mCText.setVisibility(View.INVISIBLE);
+            mVText.setVisibility(View.INVISIBLE);
+            mBText.setVisibility(View.INVISIBLE);
+            mNText.setVisibility(View.INVISIBLE);
+            mMText.setVisibility(View.INVISIBLE);
+            mAAccentText.setVisibility(View.INVISIBLE);
+            mEAccentText.setVisibility(View.INVISIBLE);
+            mIAccentText.setVisibility(View.INVISIBLE);
+            mOAccentText.setVisibility(View.INVISIBLE);
+            mUAccentText.setVisibility(View.INVISIBLE);
+            mEnieText.setVisibility(View.INVISIBLE);
+        } else {
+            mQText.setVisibility(View.VISIBLE);
+            mWText.setVisibility(View.VISIBLE);
+            mEText.setVisibility(View.VISIBLE);
+            mRText.setVisibility(View.VISIBLE);
+            mTText.setVisibility(View.VISIBLE);
+            mYText.setVisibility(View.VISIBLE);
+            mUText.setVisibility(View.VISIBLE);
+            mIText.setVisibility(View.VISIBLE);
+            mOText.setVisibility(View.VISIBLE);
+            mPText.setVisibility(View.VISIBLE);
+            mAText.setVisibility(View.VISIBLE);
+            mSText.setVisibility(View.VISIBLE);
+            mDText.setVisibility(View.VISIBLE);
+            mFText.setVisibility(View.VISIBLE);
+            mGText.setVisibility(View.VISIBLE);
+            mHText.setVisibility(View.VISIBLE);
+            mJText.setVisibility(View.VISIBLE);
+            mKText.setVisibility(View.VISIBLE);
+            mLText.setVisibility(View.VISIBLE);
+            mZText.setVisibility(View.VISIBLE);
+            mXText.setVisibility(View.VISIBLE);
+            mCText.setVisibility(View.VISIBLE);
+            mVText.setVisibility(View.VISIBLE);
+            mBText.setVisibility(View.VISIBLE);
+            mNText.setVisibility(View.VISIBLE);
+            mMText.setVisibility(View.VISIBLE);
+            mAAccentText.setVisibility(View.VISIBLE);
+            mEAccentText.setVisibility(View.VISIBLE);
+            mIAccentText.setVisibility(View.VISIBLE);
+            mOAccentText.setVisibility(View.VISIBLE);
+            mUAccentText.setVisibility(View.VISIBLE);
+            mEnieText.setVisibility(View.VISIBLE);
+        }
     }
 }
