@@ -1,7 +1,6 @@
 package com.reed.spanishvocabulary.UI;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -122,7 +121,8 @@ public class HangmanActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mHangmanGame.resetGame();
-                toggleLetterButtons();
+                mHangmanTextView.setText(mHangmanGame.getHangmanQuestionText());
+                showLetterButtons();
                 mGameOverText.setVisibility(View.INVISIBLE);
                 mPlayAgain.setVisibility(View.INVISIBLE);
                 mLives = 6;
@@ -140,7 +140,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(0)) {
                     mHangmanGame.setPlayed(0);
                     String newQuestionText = mHangmanGame.checkForLetter('q');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -148,7 +148,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mQText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -158,7 +158,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(1)) {
                     mHangmanGame.setPlayed(1);
                     String newQuestionText = mHangmanGame.checkForLetter('q');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -166,7 +166,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mWText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -176,7 +176,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(2)) {
                     mHangmanGame.setPlayed(2);
                     String newQuestionText = mHangmanGame.checkForLetter('e');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -184,7 +184,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mEText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -194,7 +194,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(3)) {
                     mHangmanGame.setPlayed(3);
                     String newQuestionText = mHangmanGame.checkForLetter('r');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -202,7 +202,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mRText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -212,7 +212,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(4)) {
                     mHangmanGame.setPlayed(4);
                     String newQuestionText = mHangmanGame.checkForLetter('t');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -220,7 +220,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mTText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -230,7 +230,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(5)) {
                     mHangmanGame.setPlayed(5);
                     String newQuestionText = mHangmanGame.checkForLetter('y');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -238,7 +238,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mYText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -248,7 +248,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(6)) {
                     mHangmanGame.setPlayed(6);
                     String newQuestionText = mHangmanGame.checkForLetter('u');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -256,7 +256,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mUText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -266,7 +266,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(7)) {
                     mHangmanGame.setPlayed(7);
                     String newQuestionText = mHangmanGame.checkForLetter('i');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -274,7 +274,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mIText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -284,7 +284,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(8)) {
                     mHangmanGame.setPlayed(8);
                     String newQuestionText = mHangmanGame.checkForLetter('o');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -292,7 +292,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mOText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -302,7 +302,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(9)) {
                     mHangmanGame.setPlayed(9);
                     String newQuestionText = mHangmanGame.checkForLetter('p');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -310,7 +310,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mPText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -320,7 +320,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(10)) {
                     mHangmanGame.setPlayed(10);
                     String newQuestionText = mHangmanGame.checkForLetter('a');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -328,7 +328,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mAText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -338,7 +338,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(11)) {
                     mHangmanGame.setPlayed(11);
                     String newQuestionText = mHangmanGame.checkForLetter('s');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -346,7 +346,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mSText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -356,7 +356,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(12)) {
                     mHangmanGame.setPlayed(12);
                     String newQuestionText = mHangmanGame.checkForLetter('d');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -364,7 +364,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mDText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -374,7 +374,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(13)) {
                     mHangmanGame.setPlayed(13);
                     String newQuestionText = mHangmanGame.checkForLetter('f');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -382,7 +382,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mFText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -392,7 +392,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(14)) {
                     mHangmanGame.setPlayed(14);
                     String newQuestionText = mHangmanGame.checkForLetter('g');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -400,7 +400,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mGText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -410,7 +410,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(15)) {
                     mHangmanGame.setPlayed(15);
                     String newQuestionText = mHangmanGame.checkForLetter('h');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -418,7 +418,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mHText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -428,7 +428,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(16)) {
                     mHangmanGame.setPlayed(16);
                     String newQuestionText = mHangmanGame.checkForLetter('j');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -436,7 +436,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mJText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -446,7 +446,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(17)) {
                     mHangmanGame.setPlayed(17);
                     String newQuestionText = mHangmanGame.checkForLetter('k');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -454,7 +454,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mKText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -464,7 +464,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(18)) {
                     mHangmanGame.setPlayed(18);
                     String newQuestionText = mHangmanGame.checkForLetter('l');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -472,7 +472,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mLText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -482,7 +482,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(19)) {
                     mHangmanGame.setPlayed(19);
                     String newQuestionText = mHangmanGame.checkForLetter('z');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -490,7 +490,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mZText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -500,7 +500,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(20)) {
                     mHangmanGame.setPlayed(20);
                     String newQuestionText = mHangmanGame.checkForLetter('x');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -508,7 +508,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mXText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -518,7 +518,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(21)) {
                     mHangmanGame.setPlayed(21);
                     String newQuestionText = mHangmanGame.checkForLetter('c');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -526,7 +526,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mCText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -536,7 +536,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(22)) {
                     mHangmanGame.setPlayed(22);
                     String newQuestionText = mHangmanGame.checkForLetter('v');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -544,7 +544,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mVText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -554,7 +554,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(23)) {
                     mHangmanGame.setPlayed(23);
                     String newQuestionText = mHangmanGame.checkForLetter('b');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -562,7 +562,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mBText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -572,7 +572,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(24)) {
                     mHangmanGame.setPlayed(24);
                     String newQuestionText = mHangmanGame.checkForLetter('n');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -580,7 +580,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mNText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -590,7 +590,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(25)) {
                     mHangmanGame.setPlayed(25);
                     String newQuestionText = mHangmanGame.checkForLetter('m');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -598,7 +598,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mMText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -608,7 +608,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(26)) {
                     mHangmanGame.setPlayed(26);
                     String newQuestionText = mHangmanGame.checkForLetter('ñ');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -616,7 +616,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mEnieText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -626,7 +626,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(27)) {
                     mHangmanGame.setPlayed(27);
                     String newQuestionText = mHangmanGame.checkForLetter('á');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -634,7 +634,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mAAccentText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -644,7 +644,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(28)) {
                     mHangmanGame.setPlayed(28);
                     String newQuestionText = mHangmanGame.checkForLetter('é');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -652,7 +652,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mEAccentText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -662,7 +662,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(29)) {
                     mHangmanGame.setPlayed(29);
                     String newQuestionText = mHangmanGame.checkForLetter('í');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -670,7 +670,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mIAccentText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -680,7 +680,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(30)) {
                     mHangmanGame.setPlayed(30);
                     String newQuestionText = mHangmanGame.checkForLetter('ó');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -688,7 +688,7 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mOAccentText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -698,7 +698,7 @@ public class HangmanActivity extends AppCompatActivity {
                 if (!mHangmanGame.isPLayed(31)) {
                     mHangmanGame.setPlayed(31);
                     String newQuestionText = mHangmanGame.checkForLetter('ú');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                         mLives--;
                         if (mLives <= 0) {
                             gameOver();
@@ -706,54 +706,55 @@ public class HangmanActivity extends AppCompatActivity {
                     } else {
                         mHangmanTextView.setText(newQuestionText);
                     }
-                    mQText.setTextColor(Color.parseColor("#111111"));
+                    mUAccentText.setVisibility(View.INVISIBLE);
                 }
             }
         });
     }
 
+    private void hideLetterButtons() {
+        mQText.setVisibility(View.INVISIBLE);
+        mWText.setVisibility(View.INVISIBLE);
+        mEText.setVisibility(View.INVISIBLE);
+        mRText.setVisibility(View.INVISIBLE);
+        mTText.setVisibility(View.INVISIBLE);
+        mYText.setVisibility(View.INVISIBLE);
+        mUText.setVisibility(View.INVISIBLE);
+        mIText.setVisibility(View.INVISIBLE);
+        mOText.setVisibility(View.INVISIBLE);
+        mPText.setVisibility(View.INVISIBLE);
+        mAText.setVisibility(View.INVISIBLE);
+        mSText.setVisibility(View.INVISIBLE);
+        mDText.setVisibility(View.INVISIBLE);
+        mFText.setVisibility(View.INVISIBLE);
+        mGText.setVisibility(View.INVISIBLE);
+        mHText.setVisibility(View.INVISIBLE);
+        mJText.setVisibility(View.INVISIBLE);
+        mKText.setVisibility(View.INVISIBLE);
+        mLText.setVisibility(View.INVISIBLE);
+        mZText.setVisibility(View.INVISIBLE);
+        mXText.setVisibility(View.INVISIBLE);
+        mCText.setVisibility(View.INVISIBLE);
+        mVText.setVisibility(View.INVISIBLE);
+        mBText.setVisibility(View.INVISIBLE);
+        mNText.setVisibility(View.INVISIBLE);
+        mMText.setVisibility(View.INVISIBLE);
+        mAAccentText.setVisibility(View.INVISIBLE);
+        mEAccentText.setVisibility(View.INVISIBLE);
+        mIAccentText.setVisibility(View.INVISIBLE);
+        mOAccentText.setVisibility(View.INVISIBLE);
+        mUAccentText.setVisibility(View.INVISIBLE);
+        mEnieText.setVisibility(View.INVISIBLE);
+    }
+
     //Game Over
     private void gameOver() {
-        toggleLetterButtons();
+        hideLetterButtons();
         mGameOverText.setVisibility(View.VISIBLE);
         mPlayAgain.setVisibility(View.VISIBLE);
     }
 
-    private void toggleLetterButtons() {
-        if (mQText.getVisibility() == View.VISIBLE) {
-            mQText.setVisibility(View.INVISIBLE);
-            mWText.setVisibility(View.INVISIBLE);
-            mEText.setVisibility(View.INVISIBLE);
-            mRText.setVisibility(View.INVISIBLE);
-            mTText.setVisibility(View.INVISIBLE);
-            mYText.setVisibility(View.INVISIBLE);
-            mUText.setVisibility(View.INVISIBLE);
-            mIText.setVisibility(View.INVISIBLE);
-            mOText.setVisibility(View.INVISIBLE);
-            mPText.setVisibility(View.INVISIBLE);
-            mAText.setVisibility(View.INVISIBLE);
-            mSText.setVisibility(View.INVISIBLE);
-            mDText.setVisibility(View.INVISIBLE);
-            mFText.setVisibility(View.INVISIBLE);
-            mGText.setVisibility(View.INVISIBLE);
-            mHText.setVisibility(View.INVISIBLE);
-            mJText.setVisibility(View.INVISIBLE);
-            mKText.setVisibility(View.INVISIBLE);
-            mLText.setVisibility(View.INVISIBLE);
-            mZText.setVisibility(View.INVISIBLE);
-            mXText.setVisibility(View.INVISIBLE);
-            mCText.setVisibility(View.INVISIBLE);
-            mVText.setVisibility(View.INVISIBLE);
-            mBText.setVisibility(View.INVISIBLE);
-            mNText.setVisibility(View.INVISIBLE);
-            mMText.setVisibility(View.INVISIBLE);
-            mAAccentText.setVisibility(View.INVISIBLE);
-            mEAccentText.setVisibility(View.INVISIBLE);
-            mIAccentText.setVisibility(View.INVISIBLE);
-            mOAccentText.setVisibility(View.INVISIBLE);
-            mUAccentText.setVisibility(View.INVISIBLE);
-            mEnieText.setVisibility(View.INVISIBLE);
-        } else {
+    private void showLetterButtons() {
             mQText.setVisibility(View.VISIBLE);
             mWText.setVisibility(View.VISIBLE);
             mEText.setVisibility(View.VISIBLE);
@@ -786,6 +787,5 @@ public class HangmanActivity extends AppCompatActivity {
             mOAccentText.setVisibility(View.VISIBLE);
             mUAccentText.setVisibility(View.VISIBLE);
             mEnieText.setVisibility(View.VISIBLE);
-        }
     }
 }
