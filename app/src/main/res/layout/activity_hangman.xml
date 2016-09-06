@@ -9,7 +9,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".UI.HangmanActivity">
+    tools:context=".UI.HangmanActivity"
+    android:background="@drawable/bg_landscape_gradient">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -377,7 +378,8 @@
         android:id="@+id/playAgainButton"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/bg_choice_button_blue"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -386,7 +388,8 @@
         android:id="@+id/hangmanHomeButton"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentStart="true"
+        android:background="@drawable/bg_choice_button_red"/>
 
     <TextView
         android:layout_width="wrap_content"
