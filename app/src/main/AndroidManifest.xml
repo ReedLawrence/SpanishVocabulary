@@ -25,7 +25,8 @@
             android:name=".UI.MultipleChoiceActivity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".UI.HangmanActivity">
+        <activity android:name=".UI.HangmanActivity"
+                  android:screenOrientation="portrait">
         </activity>
     </application>
 

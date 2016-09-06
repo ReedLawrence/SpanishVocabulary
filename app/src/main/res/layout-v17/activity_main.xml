@@ -44,7 +44,12 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentLeft="true"
-        android:text="@string/hangman"/>
+        android:text="@string/hangman"
+        android:background="@drawable/bg_choice_button_blue"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="2dp"
+        />
 
     <Button
         android:layout_width="wrap_content"
@@ -54,7 +59,12 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:text="@string/multiple_choice"/>
+        android:text="@string/multiple_choice"
+        android:background="@drawable/bg_choice_button_blue"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -64,13 +74,24 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:text="@string/flash_cards"/>
+        android:text="@string/flash_cards"
+        android:background="@drawable/bg_choice_button_blue"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"/>
 
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/chapterSpinner"
         android:layout_above="@+id/flashCardButton"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="2dp"
+        android:dropDownSelector="#d70606"
+        android:prompt="Select a Chapter"/>
 
 </RelativeLayout>
