@@ -121,7 +121,7 @@ public class HangmanActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mHangmanGame.resetGame();
-                mHangmanTextView.setText(mHangmanGame.getHangmanQuestionText());
+                mHangmanTextView.setText(addSpaces(mHangmanGame.getHangmanQuestionText()));
                 showLetterButtons();
                 mGameOverText.setVisibility(View.INVISIBLE);
                 mPlayAgain.setVisibility(View.INVISIBLE);
@@ -131,7 +131,7 @@ public class HangmanActivity extends AppCompatActivity {
 
 
         //Generate Hangman Text
-        mHangmanTextView.setText(mHangmanGame.getHangmanQuestionText());
+        mHangmanTextView.setText(addSpaces(mHangmanGame.getHangmanQuestionText()));
 
         //Set listeners
         mQText.setOnClickListener(new View.OnClickListener() {
@@ -142,16 +142,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('q');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mQText.setVisibility(View.INVISIBLE);
                     }
-                    mQText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -163,16 +165,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('q');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mWText.setVisibility(View.INVISIBLE);
                     }
-                    mWText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -184,16 +188,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('e');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mEText.setVisibility(View.INVISIBLE);
                     }
-                    mEText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -205,16 +211,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('r');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mRText.setVisibility(View.INVISIBLE);
                     }
-                    mRText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -226,16 +234,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('t');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mTText.setVisibility(View.INVISIBLE);
                     }
-                    mTText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -247,16 +257,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('y');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mYText.setVisibility(View.INVISIBLE);
                     }
-                    mYText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -268,16 +280,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('u');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mUText.setVisibility(View.INVISIBLE);
                     }
-                    mUText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -289,16 +303,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('i');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mIText.setVisibility(View.INVISIBLE);
                     }
-                    mIText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -310,16 +326,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('o');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mOText.setVisibility(View.INVISIBLE);
                     }
-                    mOText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -331,16 +349,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('p');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mPText.setVisibility(View.INVISIBLE);
                     }
-                    mPText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -352,16 +372,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('a');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mAText.setVisibility(View.INVISIBLE);
                     }
-                    mAText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -373,16 +395,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('s');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mSText.setVisibility(View.INVISIBLE);
                     }
-                    mSText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -394,16 +418,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('d');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mDText.setVisibility(View.INVISIBLE);
                     }
-                    mDText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -415,16 +441,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('f');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mFText.setVisibility(View.INVISIBLE);
                     }
-                    mFText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -436,16 +464,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('g');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mGText.setVisibility(View.INVISIBLE);
                     }
-                    mGText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -457,16 +487,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('h');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mHText.setVisibility(View.INVISIBLE);
                     }
-                    mHText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -478,16 +510,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('j');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mJText.setVisibility(View.INVISIBLE);
                     }
-                    mJText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -499,16 +533,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('k');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mKText.setVisibility(View.INVISIBLE);
                     }
-                    mKText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -520,16 +556,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('l');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mLText.setVisibility(View.INVISIBLE);
                     }
-                    mLText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -541,16 +579,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('z');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mZText.setVisibility(View.INVISIBLE);
                     }
-                    mZText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -562,16 +602,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('x');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mXText.setVisibility(View.INVISIBLE);
                     }
-                    mXText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -583,16 +625,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('c');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mCText.setVisibility(View.INVISIBLE);
                     }
-                    mCText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -604,16 +648,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('v');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mVText.setVisibility(View.INVISIBLE);
                     }
-                    mVText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -625,16 +671,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('b');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mBText.setVisibility(View.INVISIBLE);
                     }
-                    mBText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -646,16 +694,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('n');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mNText.setVisibility(View.INVISIBLE);
                     }
-                    mNText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -667,16 +717,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('m');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mMText.setVisibility(View.INVISIBLE);
                     }
-                    mMText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -688,16 +740,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('ñ');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mEnieText.setVisibility(View.INVISIBLE);
                     }
-                    mEnieText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -709,16 +763,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('á');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mAAccentText.setVisibility(View.INVISIBLE);
                     }
-                    mAAccentText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -730,16 +786,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('é');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mEAccentText.setVisibility(View.INVISIBLE);
                     }
-                    mEAccentText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -751,16 +809,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('í');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mIAccentText.setVisibility(View.INVISIBLE);
                     }
-                    mIAccentText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -772,16 +832,18 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('ó');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mOAccentText.setVisibility(View.INVISIBLE);
                     }
-                    mOAccentText.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -793,19 +855,30 @@ public class HangmanActivity extends AppCompatActivity {
                     String newQuestionText = mHangmanGame.checkForLetter('ú');
                     if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
                         gameOverWin();
-                    }
-                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                        mLives--;
-                        if (mLives <= 0) {
-                            gameOverLoss();
-                        }
                     } else {
-                        mHangmanTextView.setText(newQuestionText);
+                        newQuestionText = addSpaces(newQuestionText);
+                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                            mLives--;
+                            if (mLives <= 0) {
+                                gameOverLoss();
+                            }
+                        } else {
+                            mHangmanTextView.setText(newQuestionText);
+                        }
+                        mUAccentText.setVisibility(View.INVISIBLE);
                     }
-                    mUAccentText.setVisibility(View.INVISIBLE);
                 }
             }
         });
+    }
+
+    private String addSpaces(String question) {
+        char[] spacedQuestion = question.toCharArray();
+        question = "";
+        for (char aSpacedQuestion : spacedQuestion) {
+            question = question + aSpacedQuestion + " ";
+        }
+        return question;
     }
 
     private void gameOverWin() {
