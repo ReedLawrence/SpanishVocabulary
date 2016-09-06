@@ -2,8 +2,8 @@ package com.reed.spanishvocabulary.UI;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -11,9 +11,8 @@ import android.widget.TextView;
 import com.reed.spanishvocabulary.Model.HangmanGame;
 import com.reed.spanishvocabulary.R;
 
-import org.w3c.dom.Text;
-
 public class HangmanActivity extends AppCompatActivity {
+
     private TextView mQText;
     private TextView mWText;
     private TextView mEText;
@@ -57,6 +56,7 @@ public class HangmanActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hangman);
 
+
         mQText = (TextView) findViewById(R.id.qText);
         mWText = (TextView) findViewById(R.id.wText);
         mEText = (TextView) findViewById(R.id.eText);
@@ -83,22 +83,31 @@ public class HangmanActivity extends AppCompatActivity {
         mBText = (TextView) findViewById(R.id.bText);
         mNText = (TextView) findViewById(R.id.nText);
         mMText = (TextView) findViewById(R.id.mText);
+
+
+
         mAAccentText = (TextView) findViewById(R.id.aAccentText);
         mEAccentText = (TextView) findViewById(R.id.eAccentText);
         mIAccentText = (TextView) findViewById(R.id.iAccentText);
         mOAccentText = (TextView) findViewById(R.id.oAccentText);
         mUAccentText = (TextView) findViewById(R.id.uAccentText);
         mEnieText = (TextView) findViewById(R.id.nEnieText);
+
+
         mHangmanTextView = (TextView) findViewById(R.id.hangmanTextView);
 
-        Button mHome = (Button) findViewById(R.id.homeButton);
+
+        Button mHome = (Button) findViewById(R.id.hangmanHomeButton);
+
         mPlayAgain = (Button) findViewById(R.id.playAgainButton);
         mGameOverText = (TextView) findViewById(R.id.gameOverText);
         mPlayAgain.setVisibility(View.INVISIBLE);
         mGameOverText.setVisibility(View.INVISIBLE);
 
+
         Intent intent = getIntent();
         mHangmanGame = new HangmanGame(intent.getIntExtra("chapterNumber", 1));
+
 
         mHome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,6 +115,8 @@ public class HangmanActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+
 
         mPlayAgain.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,18 +129,20 @@ public class HangmanActivity extends AppCompatActivity {
             }
         });
 
+
         //Generate Hangman Text
         mHangmanTextView.setText(mHangmanGame.getHangmanQuestionText());
+
         //Set listeners
         mQText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(0)) {
+                if (!mHangmanGame.isPLayed(0)) {
                     mHangmanGame.setPlayed(0);
                     String newQuestionText = mHangmanGame.checkForLetter('q');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -142,12 +155,12 @@ public class HangmanActivity extends AppCompatActivity {
         mWText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(1)) {
+                if (!mHangmanGame.isPLayed(1)) {
                     mHangmanGame.setPlayed(1);
                     String newQuestionText = mHangmanGame.checkForLetter('q');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -160,12 +173,12 @@ public class HangmanActivity extends AppCompatActivity {
         mEText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(2)) {
+                if (!mHangmanGame.isPLayed(2)) {
                     mHangmanGame.setPlayed(2);
                     String newQuestionText = mHangmanGame.checkForLetter('e');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -178,12 +191,12 @@ public class HangmanActivity extends AppCompatActivity {
         mRText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(3)) {
+                if (!mHangmanGame.isPLayed(3)) {
                     mHangmanGame.setPlayed(3);
                     String newQuestionText = mHangmanGame.checkForLetter('r');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -196,12 +209,12 @@ public class HangmanActivity extends AppCompatActivity {
         mTText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(4)) {
+                if (!mHangmanGame.isPLayed(4)) {
                     mHangmanGame.setPlayed(4);
                     String newQuestionText = mHangmanGame.checkForLetter('t');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -214,12 +227,12 @@ public class HangmanActivity extends AppCompatActivity {
         mYText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(5)) {
+                if (!mHangmanGame.isPLayed(5)) {
                     mHangmanGame.setPlayed(5);
                     String newQuestionText = mHangmanGame.checkForLetter('y');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -232,12 +245,12 @@ public class HangmanActivity extends AppCompatActivity {
         mUText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(6)) {
+                if (!mHangmanGame.isPLayed(6)) {
                     mHangmanGame.setPlayed(6);
                     String newQuestionText = mHangmanGame.checkForLetter('u');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -250,12 +263,12 @@ public class HangmanActivity extends AppCompatActivity {
         mIText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(7)) {
+                if (!mHangmanGame.isPLayed(7)) {
                     mHangmanGame.setPlayed(7);
                     String newQuestionText = mHangmanGame.checkForLetter('i');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -268,12 +281,12 @@ public class HangmanActivity extends AppCompatActivity {
         mOText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(8)) {
+                if (!mHangmanGame.isPLayed(8)) {
                     mHangmanGame.setPlayed(8);
                     String newQuestionText = mHangmanGame.checkForLetter('o');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -286,12 +299,12 @@ public class HangmanActivity extends AppCompatActivity {
         mPText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(9)) {
+                if (!mHangmanGame.isPLayed(9)) {
                     mHangmanGame.setPlayed(9);
                     String newQuestionText = mHangmanGame.checkForLetter('p');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -304,12 +317,12 @@ public class HangmanActivity extends AppCompatActivity {
         mAText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(10)) {
+                if (!mHangmanGame.isPLayed(10)) {
                     mHangmanGame.setPlayed(10);
                     String newQuestionText = mHangmanGame.checkForLetter('a');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -322,12 +335,12 @@ public class HangmanActivity extends AppCompatActivity {
         mSText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(11)) {
+                if (!mHangmanGame.isPLayed(11)) {
                     mHangmanGame.setPlayed(11);
                     String newQuestionText = mHangmanGame.checkForLetter('s');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -340,12 +353,12 @@ public class HangmanActivity extends AppCompatActivity {
         mDText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(12)) {
+                if (!mHangmanGame.isPLayed(12)) {
                     mHangmanGame.setPlayed(12);
                     String newQuestionText = mHangmanGame.checkForLetter('d');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -358,12 +371,12 @@ public class HangmanActivity extends AppCompatActivity {
         mFText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(13)) {
+                if (!mHangmanGame.isPLayed(13)) {
                     mHangmanGame.setPlayed(13);
                     String newQuestionText = mHangmanGame.checkForLetter('f');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -376,12 +389,12 @@ public class HangmanActivity extends AppCompatActivity {
         mGText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(14)) {
+                if (!mHangmanGame.isPLayed(14)) {
                     mHangmanGame.setPlayed(14);
                     String newQuestionText = mHangmanGame.checkForLetter('g');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -394,12 +407,12 @@ public class HangmanActivity extends AppCompatActivity {
         mHText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(15)) {
+                if (!mHangmanGame.isPLayed(15)) {
                     mHangmanGame.setPlayed(15);
                     String newQuestionText = mHangmanGame.checkForLetter('h');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -412,12 +425,12 @@ public class HangmanActivity extends AppCompatActivity {
         mJText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(16)) {
+                if (!mHangmanGame.isPLayed(16)) {
                     mHangmanGame.setPlayed(16);
                     String newQuestionText = mHangmanGame.checkForLetter('j');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -430,12 +443,12 @@ public class HangmanActivity extends AppCompatActivity {
         mKText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(17)) {
+                if (!mHangmanGame.isPLayed(17)) {
                     mHangmanGame.setPlayed(17);
                     String newQuestionText = mHangmanGame.checkForLetter('k');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -448,12 +461,12 @@ public class HangmanActivity extends AppCompatActivity {
         mLText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(18)) {
+                if (!mHangmanGame.isPLayed(18)) {
                     mHangmanGame.setPlayed(18);
                     String newQuestionText = mHangmanGame.checkForLetter('l');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -466,12 +479,12 @@ public class HangmanActivity extends AppCompatActivity {
         mZText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(19)) {
+                if (!mHangmanGame.isPLayed(19)) {
                     mHangmanGame.setPlayed(19);
                     String newQuestionText = mHangmanGame.checkForLetter('z');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -484,12 +497,12 @@ public class HangmanActivity extends AppCompatActivity {
         mXText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(20)) {
+                if (!mHangmanGame.isPLayed(20)) {
                     mHangmanGame.setPlayed(20);
                     String newQuestionText = mHangmanGame.checkForLetter('x');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -502,12 +515,12 @@ public class HangmanActivity extends AppCompatActivity {
         mCText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(21)) {
+                if (!mHangmanGame.isPLayed(21)) {
                     mHangmanGame.setPlayed(21);
                     String newQuestionText = mHangmanGame.checkForLetter('c');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -520,12 +533,12 @@ public class HangmanActivity extends AppCompatActivity {
         mVText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(22)) {
+                if (!mHangmanGame.isPLayed(22)) {
                     mHangmanGame.setPlayed(22);
                     String newQuestionText = mHangmanGame.checkForLetter('v');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -538,12 +551,12 @@ public class HangmanActivity extends AppCompatActivity {
         mBText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(23)) {
+                if (!mHangmanGame.isPLayed(23)) {
                     mHangmanGame.setPlayed(23);
                     String newQuestionText = mHangmanGame.checkForLetter('b');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -556,12 +569,12 @@ public class HangmanActivity extends AppCompatActivity {
         mNText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(24)) {
+                if (!mHangmanGame.isPLayed(24)) {
                     mHangmanGame.setPlayed(24);
                     String newQuestionText = mHangmanGame.checkForLetter('n');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -574,12 +587,12 @@ public class HangmanActivity extends AppCompatActivity {
         mMText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(25)) {
+                if (!mHangmanGame.isPLayed(25)) {
                     mHangmanGame.setPlayed(25);
                     String newQuestionText = mHangmanGame.checkForLetter('m');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -592,12 +605,12 @@ public class HangmanActivity extends AppCompatActivity {
         mEnieText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(26)) {
+                if (!mHangmanGame.isPLayed(26)) {
                     mHangmanGame.setPlayed(26);
                     String newQuestionText = mHangmanGame.checkForLetter('ñ');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -610,12 +623,12 @@ public class HangmanActivity extends AppCompatActivity {
         mAAccentText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(27)) {
+                if (!mHangmanGame.isPLayed(27)) {
                     mHangmanGame.setPlayed(27);
                     String newQuestionText = mHangmanGame.checkForLetter('á');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -628,12 +641,12 @@ public class HangmanActivity extends AppCompatActivity {
         mEAccentText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(28)) {
+                if (!mHangmanGame.isPLayed(28)) {
                     mHangmanGame.setPlayed(28);
                     String newQuestionText = mHangmanGame.checkForLetter('é');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -646,12 +659,12 @@ public class HangmanActivity extends AppCompatActivity {
         mIAccentText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(29)) {
+                if (!mHangmanGame.isPLayed(29)) {
                     mHangmanGame.setPlayed(29);
                     String newQuestionText = mHangmanGame.checkForLetter('í');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -664,12 +677,12 @@ public class HangmanActivity extends AppCompatActivity {
         mOAccentText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(30)) {
+                if (!mHangmanGame.isPLayed(30)) {
                     mHangmanGame.setPlayed(30);
                     String newQuestionText = mHangmanGame.checkForLetter('ó');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -682,12 +695,12 @@ public class HangmanActivity extends AppCompatActivity {
         mUAccentText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mHangmanGame.isPLayed(31)) {
+                if (!mHangmanGame.isPLayed(31)) {
                     mHangmanGame.setPlayed(31);
                     String newQuestionText = mHangmanGame.checkForLetter('ú');
-                    if(newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())){
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.toString())) {
                         mLives--;
-                        if(mLives <= 0) {
+                        if (mLives <= 0) {
                             gameOver();
                         }
                     } else {
@@ -698,6 +711,7 @@ public class HangmanActivity extends AppCompatActivity {
             }
         });
     }
+
     //Game Over
     private void gameOver() {
         toggleLetterButtons();
@@ -706,7 +720,7 @@ public class HangmanActivity extends AppCompatActivity {
     }
 
     private void toggleLetterButtons() {
-        if(mQText.getVisibility() == View.VISIBLE) {
+        if (mQText.getVisibility() == View.VISIBLE) {
             mQText.setVisibility(View.INVISIBLE);
             mWText.setVisibility(View.INVISIBLE);
             mEText.setVisibility(View.INVISIBLE);

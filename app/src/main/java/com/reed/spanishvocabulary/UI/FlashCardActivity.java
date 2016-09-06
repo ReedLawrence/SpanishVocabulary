@@ -33,7 +33,7 @@ public class FlashCardActivity extends AppCompatActivity {
 
         mFlashCardButton = (Button) findViewById(R.id.flashCardButton);
         Button nextButton = (Button) findViewById(R.id.nextButton);
-        Button homeButton = (Button) findViewById(R.id.homeButton);
+        Button homeButton = (Button) findViewById(R.id.hangmanHomeButton);
 
         mCardNum = mRandom.nextInt(mVocabBook.getLength(getChapterNum()));
         mFlashCardButton.setText(mVocabBook.getVocabWord(getChapterNum(), mCardNum).getSpanishTranslation());

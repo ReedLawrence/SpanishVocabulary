@@ -13,9 +13,9 @@ public class HangmanGame {
 
     public HangmanGame(int chapter) {
         mChapter = chapter;
+        mVocabBook = new VocabBook();
         generateHangmanAnswerText(chapter);
         generateHangmanQuestionText();
-        mVocabBook = new VocabBook();
         mPlayed = new Boolean[32];
         clearAllPLayed();
     }
@@ -25,7 +25,7 @@ public class HangmanGame {
         for(int i = 0; i<questionText.length; i++) {
             questionText[i] = replaceLetterWithBlank(questionText[i]);
         }
-        mHangmanQuestionText = questionText.toString();
+        mHangmanQuestionText = new String(questionText);
     }
 
     private char replaceLetterWithBlank(char c) {
@@ -55,7 +55,7 @@ public class HangmanGame {
                 questionText[i] = mHangmanAnswerText.charAt(i);
             }
         }
-        mHangmanQuestionText = questionText.toString();
+        mHangmanQuestionText = new String(questionText);
         return mHangmanQuestionText;
     }
 

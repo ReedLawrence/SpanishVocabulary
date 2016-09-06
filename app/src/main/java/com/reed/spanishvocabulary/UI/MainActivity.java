@@ -27,8 +27,6 @@ public class MainActivity extends AppCompatActivity {
         Spinner chapterSpinner = (Spinner) findViewById(R.id.chapterSpinner);
         Button hangmanButton = (Button) findViewById(R.id.hangmanButton);
 
-        //chapterSpinner.setOnClickListener(this);
-
         List<String> chapters = new ArrayList<>();
         chapters.add("Chapter 1");
         chapters.add("Chapter 2");
