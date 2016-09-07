@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         Spinner chapterSpinner = (Spinner) findViewById(R.id.chapterSpinner);
         Button hangmanButton = (Button) findViewById(R.id.hangmanButton);
 
-        List<String> chapters = new ArrayList<>();
+        final List<String> chapters = new ArrayList<>();
         chapters.add("Chapter 1");
         chapters.add("Chapter 2");
         chapters.add("Chapter 3");
@@ -82,6 +82,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, HangmanActivity.class);
                 intent.putExtra("chapterNumber", getChapterNumber());
+                //This activity will need to be passed the category when they are inserted
+                intent.putExtra("category", chapters.get(getChapterNumber()));
                 startActivity(intent);
             }
         });

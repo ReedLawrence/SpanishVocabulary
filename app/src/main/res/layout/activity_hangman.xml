@@ -12,29 +12,61 @@
     tools:context=".UI.HangmanActivity"
     android:background="@drawable/bg_landscape_gradient">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/hangmanImage"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:src="@drawable/tree"
-        android:adjustViewBounds="true"/>
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Generated Hangman Text"
         android:id="@+id/hangmanTextView"
-        android:layout_below="@+id/hangmanImage"
         android:layout_centerHorizontal="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:gravity="center_vertical|center_horizontal"
-        android:textSize="30sp"
-        android:layout_marginBottom="12dp"/>
+        android:textSize="26sp"
+        android:layout_marginBottom="12dp"
+        android:layout_below="@+id/HangmanVDivide"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:id="@+id/CategoryBar">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:id="@+id/hangmanHomeButton"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/bg_choice_button_red"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Category"
+            android:id="@+id/categoryText"
+            android:layout_weight="5"
+            android:gravity="center_vertical|center_horizontal"
+            android:textSize="26sp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Play Again?"
+            android:id="@+id/playAgainButton"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/bg_choice_button_blue"
+            />
+    </LinearLayout>
 
     <LinearLayout
         android:orientation="vertical"
@@ -371,26 +403,6 @@
         </LinearLayout>
     </LinearLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Play Again?"
-        android:id="@+id/playAgainButton"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:background="@drawable/bg_choice_button_blue"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Home"
-        android:id="@+id/hangmanHomeButton"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:background="@drawable/bg_choice_button_red"/>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -401,5 +413,79 @@
         android:layout_above="@+id/hangmanTextView"
         android:layout_marginBottom="150dp"
         android:textColor="#f25019"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/HangmanVDivide"
+        android:layout_below="@+id/CategoryBar">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/hangmanImage1"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/tree"
+                android:adjustViewBounds="false"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/hangmanImage2"
+                android:src="@drawable/tree"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/hangmanImage3"
+                android:src="@drawable/tree"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/hangmanImage4"
+                android:src="@drawable/tree"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/hangmanImage5"
+                android:src="@drawable/tree"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/hangmanImage6"
+                android:src="@drawable/tree"
+                android:layout_weight="1"/>
+        </LinearLayout>
+    </LinearLayout>
 
 </RelativeLayout>

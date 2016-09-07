@@ -91,7 +91,6 @@
         android:layout_marginRight="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="2dp"
-        android:dropDownSelector="#d70606"
-        android:prompt="Select a Chapter"/>
+        android:dropDownSelector="#d70606"/>
 
 </RelativeLayout>

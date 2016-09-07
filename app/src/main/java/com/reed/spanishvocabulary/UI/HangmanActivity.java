@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.reed.spanishvocabulary.Model.HangmanGame;
@@ -49,6 +50,13 @@ public class HangmanActivity extends AppCompatActivity {
     private TextView mHangmanTextView;
     private TextView mGameOverText;
     private Button mPlayAgain;
+    private ImageView mHangmanImage1;
+    private ImageView mHangmanImage2;
+    private ImageView mHangmanImage3;
+    private ImageView mHangmanImage4;
+    private ImageView mHangmanImage5;
+    private ImageView mHangmanImage6;
+    private TextView mCategoryText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,8 +91,6 @@ public class HangmanActivity extends AppCompatActivity {
         mNText = (TextView) findViewById(R.id.nText);
         mMText = (TextView) findViewById(R.id.mText);
 
-
-
         mAAccentText = (TextView) findViewById(R.id.aAccentText);
         mEAccentText = (TextView) findViewById(R.id.eAccentText);
         mIAccentText = (TextView) findViewById(R.id.iAccentText);
@@ -92,20 +98,25 @@ public class HangmanActivity extends AppCompatActivity {
         mUAccentText = (TextView) findViewById(R.id.uAccentText);
         mEnieText = (TextView) findViewById(R.id.nEnieText);
 
-
         mHangmanTextView = (TextView) findViewById(R.id.hangmanTextView);
-
-
         Button mHome = (Button) findViewById(R.id.hangmanHomeButton);
-
         mPlayAgain = (Button) findViewById(R.id.playAgainButton);
+        mCategoryText = (TextView) findViewById(R.id.categoryText);
         mGameOverText = (TextView) findViewById(R.id.gameOverText);
+        mHangmanImage1 = (ImageView) findViewById(R.id.hangmanImage1);
+        mHangmanImage2 = (ImageView) findViewById(R.id.hangmanImage2);
+        mHangmanImage3 = (ImageView) findViewById(R.id.hangmanImage3);
+        mHangmanImage4 = (ImageView) findViewById(R.id.hangmanImage4);
+        mHangmanImage5 = (ImageView) findViewById(R.id.hangmanImage5);
+        mHangmanImage6 = (ImageView) findViewById(R.id.hangmanImage6);
+
         mPlayAgain.setVisibility(View.INVISIBLE);
         mGameOverText.setVisibility(View.INVISIBLE);
-
+        hideHangingImages();
 
         Intent intent = getIntent();
         mHangmanGame = new HangmanGame(intent.getIntExtra("chapterNumber", 1));
+        mCategoryText.setText(intent.getStringExtra("category"));
 
 
         mHome.setOnClickListener(new View.OnClickListener() {
@@ -123,6 +134,7 @@ public class HangmanActivity extends AppCompatActivity {
                 mHangmanGame.resetGame();
                 mHangmanTextView.setText(addSpaces(mHangmanGame.getHangmanQuestionText()));
                 showLetterButtons();
+                hideHangingImages();
                 mGameOverText.setVisibility(View.INVISIBLE);
                 mPlayAgain.setVisibility(View.INVISIBLE);
                 mLives = 6;
@@ -146,6 +158,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -169,6 +182,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -192,6 +206,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -215,6 +230,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -238,6 +254,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -261,6 +278,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -284,6 +302,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -307,6 +326,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -330,6 +350,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -353,6 +374,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -376,6 +398,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -399,6 +422,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -422,6 +446,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -445,6 +470,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -468,6 +494,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -491,6 +518,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -514,6 +542,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -537,6 +566,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -560,6 +590,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -583,6 +614,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -606,6 +638,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -629,6 +662,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -652,6 +686,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -675,6 +710,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -698,6 +734,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -721,6 +758,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -744,6 +782,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -767,6 +806,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -790,6 +830,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -813,6 +854,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -836,6 +878,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -859,6 +902,7 @@ public class HangmanActivity extends AppCompatActivity {
                         newQuestionText = addSpaces(newQuestionText);
                         if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
                             mLives--;
+                            revealNextHangingImage();
                             if (mLives <= 0) {
                                 gameOverLoss();
                             }
@@ -870,6 +914,36 @@ public class HangmanActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void revealNextHangingImage() {
+        if(mLives == 5) {
+            mHangmanImage6.setVisibility(View.VISIBLE);
+        }
+        if(mLives == 4) {
+            mHangmanImage5.setVisibility(View.VISIBLE);
+        }
+        if(mLives == 3) {
+            mHangmanImage4.setVisibility(View.VISIBLE);
+        }
+        if(mLives == 2) {
+            mHangmanImage3.setVisibility(View.VISIBLE);
+        }
+        if(mLives == 1) {
+            mHangmanImage2.setVisibility(View.VISIBLE);
+        }
+        if(mLives == 0) {
+            mHangmanImage1.setVisibility(View.VISIBLE);
+        }
+    }
+
+    private void hideHangingImages() {
+        mHangmanImage1.setVisibility(View.INVISIBLE);
+        mHangmanImage2.setVisibility(View.INVISIBLE);
+        mHangmanImage3.setVisibility(View.INVISIBLE);
+        mHangmanImage4.setVisibility(View.INVISIBLE);
+        mHangmanImage5.setVisibility(View.INVISIBLE);
+        mHangmanImage6.setVisibility(View.INVISIBLE);
     }
 
     private String addSpaces(String question) {
