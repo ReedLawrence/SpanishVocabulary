@@ -9,14 +9,14 @@ import java.util.Vector;
  * Vector should only contain VocabWords
  */
 public class VocabList {
-    private Vector mList = new Vector();
+    private Vector<VocabWord> mList = new Vector<>();
     private Random mRandom = new Random();
 
     public VocabWord getWord(int index){
         if(index >= mList.size()) {
             return new VocabWord("Size Error", "Size Error");
         } else {
-            return (VocabWord) mList.get(index);
+            return mList.get(index);
         }
     }
 
@@ -32,7 +32,6 @@ public class VocabList {
     //Random Generators, unnecessary to have them here
     public VocabWord getRandomWord() {
         int randomNum = mRandom.nextInt(mList.size());
-        return (VocabWord) mList.get(randomNum);
+        return mList.get(randomNum);
     }
-
 }

@@ -1,7 +1,9 @@
 package com.reed.spanishvocabulary.Model;
 
 /**
- * Created by reed_ on 9/4/2016.
+ * Created by Reed Lawrence on 9/4/2016.
+ * Class provides uses the VocabBook class to generate questions and answers and
+ * checks user answers against stored answers
  */
 public class HangmanGame {
 
@@ -73,10 +75,6 @@ public class HangmanGame {
         return mHangmanAnswerText;
     }
 
-    public void setHangmanAnswerText(String hangmanAnswerText) {
-        mHangmanAnswerText = hangmanAnswerText;
-    }
-
     public void setPlayed(int index) {
         mPlayed[index] = true;
     }
@@ -89,10 +87,6 @@ public class HangmanGame {
 
     public String getHangmanQuestionText() {
         return mHangmanQuestionText;
-    }
-
-    public void setHangmanQuestionText(String hangmanQuestionText) {
-        mHangmanQuestionText = hangmanQuestionText;
     }
 
     public Boolean isPLayed(int index) {

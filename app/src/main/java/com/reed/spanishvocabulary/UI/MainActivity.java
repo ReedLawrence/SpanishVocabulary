@@ -28,17 +28,17 @@ public class MainActivity extends AppCompatActivity {
         Button hangmanButton = (Button) findViewById(R.id.hangmanButton);
 
         final List<String> chapters = new ArrayList<>();
-        chapters.add("Chapter 1");
-        chapters.add("Chapter 2");
-        chapters.add("Chapter 3");
-        chapters.add("Chapter 4");
-        chapters.add("Chapter 5");
-        chapters.add("Chapter 6");
-        chapters.add("Chapter 7");
-        chapters.add("Chapter 8");
-        chapters.add("Chapter 9");
-        chapters.add("Chapter 10");
-        chapters.add("Chapter 11");
+        chapters.add("Lesson 1");
+        chapters.add("Lesson 2");
+        chapters.add("Lesson 3");
+        chapters.add("Lesson 4");
+        chapters.add("Lesson 5");
+        chapters.add("Lesson 6");
+        chapters.add("Lesson 7");
+        chapters.add("Lesson 8");
+        chapters.add("Lesson 9");
+        chapters.add("Lesson 10");
+        chapters.add("Lesson 11");
 
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, chapters);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        assert flashCardButton != null;
         flashCardButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        assert multipleCButton != null;
         multipleCButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        assert hangmanButton != null;
         hangmanButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

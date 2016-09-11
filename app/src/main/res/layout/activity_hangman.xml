@@ -54,7 +54,8 @@
             android:id="@+id/categoryText"
             android:layout_weight="5"
             android:gravity="center_vertical|center_horizontal"
-            android:textSize="26sp"/>
+            android:textSize="26sp"
+            android:layout_gravity="center"/>
 
         <Button
             android:layout_width="wrap_content"
