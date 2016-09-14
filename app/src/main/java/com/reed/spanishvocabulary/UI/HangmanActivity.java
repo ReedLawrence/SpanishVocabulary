@@ -56,7 +56,6 @@ public class HangmanActivity extends AppCompatActivity {
     private ImageView mHangmanImage4;
     private ImageView mHangmanImage5;
     private ImageView mHangmanImage6;
-    private TextView mCategoryText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,7 +100,7 @@ public class HangmanActivity extends AppCompatActivity {
         mHangmanTextView = (TextView) findViewById(R.id.hangmanTextView);
         Button mHome = (Button) findViewById(R.id.hangmanHomeButton);
         mPlayAgain = (Button) findViewById(R.id.playAgainButton);
-        mCategoryText = (TextView) findViewById(R.id.categoryText);
+        TextView categoryText = (TextView) findViewById(R.id.categoryText);
         mGameOverText = (TextView) findViewById(R.id.gameOverText);
         mHangmanImage1 = (ImageView) findViewById(R.id.hangmanImage1);
         mHangmanImage2 = (ImageView) findViewById(R.id.hangmanImage2);
@@ -116,9 +115,11 @@ public class HangmanActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         mHangmanGame = new HangmanGame(intent.getIntExtra("chapterNumber", 1));
-        mCategoryText.setText(intent.getStringExtra("category"));
+        assert categoryText != null;
+        categoryText.setText(intent.getStringExtra("category"));
 
 
+        assert mHome != null;
         mHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
