@@ -149,768 +149,672 @@ public class HangmanActivity extends AppCompatActivity {
         mQText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(0)) {
-                    mHangmanGame.setPlayed(0);
-                    String newQuestionText = mHangmanGame.checkForLetter('q');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
-                        }
-                        mQText.setVisibility(View.INVISIBLE);
+            String newQuestionText = mHangmanGame.checkForLetter('q');
+            if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                gameOverWin();
+            } else {
+                newQuestionText = addSpaces(newQuestionText);
+                if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                    mLives--;
+                    revealNextHangingImage();
+                    if (mLives <= 0) {
+                        gameOverLoss();
                     }
+                } else {
+                    mHangmanTextView.setText(newQuestionText);
                 }
+                mQText.setVisibility(View.INVISIBLE);
+            }
             }
         });
         mWText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(1)) {
-                    mHangmanGame.setPlayed(1);
-                    String newQuestionText = mHangmanGame.checkForLetter('q');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
-                        }
-                        mWText.setVisibility(View.INVISIBLE);
+            String newQuestionText = mHangmanGame.checkForLetter('q');
+            if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                gameOverWin();
+            } else {
+                newQuestionText = addSpaces(newQuestionText);
+                if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                    mLives--;
+                    revealNextHangingImage();
+                    if (mLives <= 0) {
+                        gameOverLoss();
                     }
+                } else {
+                    mHangmanTextView.setText(newQuestionText);
                 }
+                mWText.setVisibility(View.INVISIBLE);
+            }
             }
         });
         mEText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(2)) {
-                    mHangmanGame.setPlayed(2);
-                    String newQuestionText = mHangmanGame.checkForLetter('e');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
-                        }
-                        mEText.setVisibility(View.INVISIBLE);
+            String newQuestionText = mHangmanGame.checkForLetter('e');
+            if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                gameOverWin();
+            } else {
+                newQuestionText = addSpaces(newQuestionText);
+                if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                    mLives--;
+                    revealNextHangingImage();
+                    if (mLives <= 0) {
+                        gameOverLoss();
                     }
+                } else {
+                    mHangmanTextView.setText(newQuestionText);
                 }
+                mEText.setVisibility(View.INVISIBLE);
+            }
             }
         });
         mRText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(3)) {
-                    mHangmanGame.setPlayed(3);
-                    String newQuestionText = mHangmanGame.checkForLetter('r');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
-                        }
-                        mRText.setVisibility(View.INVISIBLE);
+            String newQuestionText = mHangmanGame.checkForLetter('r');
+            if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                gameOverWin();
+            } else {
+                newQuestionText = addSpaces(newQuestionText);
+                if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                    mLives--;
+                    revealNextHangingImage();
+                    if (mLives <= 0) {
+                        gameOverLoss();
                     }
+                } else {
+                    mHangmanTextView.setText(newQuestionText);
                 }
+                mRText.setVisibility(View.INVISIBLE);
+            }
             }
         });
         mTText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(4)) {
-                    mHangmanGame.setPlayed(4);
-                    String newQuestionText = mHangmanGame.checkForLetter('t');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
+                String newQuestionText = mHangmanGame.checkForLetter('t');
+                if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                    gameOverWin();
+                } else {
+                    newQuestionText = addSpaces(newQuestionText);
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                        mLives--;
+                        revealNextHangingImage();
+                        if (mLives <= 0) {
+                            gameOverLoss();
                         }
-                        mTText.setVisibility(View.INVISIBLE);
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
                     }
+                    mTText.setVisibility(View.INVISIBLE);
                 }
             }
         });
         mYText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(5)) {
-                    mHangmanGame.setPlayed(5);
-                    String newQuestionText = mHangmanGame.checkForLetter('y');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
+                String newQuestionText = mHangmanGame.checkForLetter('y');
+                if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                    gameOverWin();
+                } else {
+                    newQuestionText = addSpaces(newQuestionText);
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                        mLives--;
+                        revealNextHangingImage();
+                        if (mLives <= 0) {
+                            gameOverLoss();
                         }
-                        mYText.setVisibility(View.INVISIBLE);
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
                     }
+                    mYText.setVisibility(View.INVISIBLE);
                 }
             }
         });
         mUText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(6)) {
-                    mHangmanGame.setPlayed(6);
-                    String newQuestionText = mHangmanGame.checkForLetter('u');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
+                String newQuestionText = mHangmanGame.checkForLetter('u');
+                if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                    gameOverWin();
+                } else {
+                    newQuestionText = addSpaces(newQuestionText);
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                        mLives--;
+                        revealNextHangingImage();
+                        if (mLives <= 0) {
+                            gameOverLoss();
                         }
-                        mUText.setVisibility(View.INVISIBLE);
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
                     }
+                    mUText.setVisibility(View.INVISIBLE);
                 }
             }
         });
         mIText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(7)) {
-                    mHangmanGame.setPlayed(7);
-                    String newQuestionText = mHangmanGame.checkForLetter('i');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
+                String newQuestionText = mHangmanGame.checkForLetter('i');
+                if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                    gameOverWin();
+                } else {
+                    newQuestionText = addSpaces(newQuestionText);
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                        mLives--;
+                        revealNextHangingImage();
+                        if (mLives <= 0) {
+                            gameOverLoss();
                         }
-                        mIText.setVisibility(View.INVISIBLE);
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
                     }
+                    mIText.setVisibility(View.INVISIBLE);
                 }
             }
         });
         mOText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(8)) {
-                    mHangmanGame.setPlayed(8);
-                    String newQuestionText = mHangmanGame.checkForLetter('o');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
+                String newQuestionText = mHangmanGame.checkForLetter('o');
+                if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                    gameOverWin();
+                } else {
+                    newQuestionText = addSpaces(newQuestionText);
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                        mLives--;
+                        revealNextHangingImage();
+                        if (mLives <= 0) {
+                            gameOverLoss();
                         }
-                        mOText.setVisibility(View.INVISIBLE);
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
                     }
+                    mOText.setVisibility(View.INVISIBLE);
                 }
             }
         });
         mPText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(9)) {
-                    mHangmanGame.setPlayed(9);
-                    String newQuestionText = mHangmanGame.checkForLetter('p');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
+                String newQuestionText = mHangmanGame.checkForLetter('p');
+                if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                    gameOverWin();
+                } else {
+                    newQuestionText = addSpaces(newQuestionText);
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                        mLives--;
+                        revealNextHangingImage();
+                        if (mLives <= 0) {
+                            gameOverLoss();
                         }
-                        mPText.setVisibility(View.INVISIBLE);
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
                     }
+                    mPText.setVisibility(View.INVISIBLE);
                 }
             }
         });
         mAText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(10)) {
-                    mHangmanGame.setPlayed(10);
-                    String newQuestionText = mHangmanGame.checkForLetter('a');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
+                String newQuestionText = mHangmanGame.checkForLetter('a');
+                if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                    gameOverWin();
+                } else {
+                    newQuestionText = addSpaces(newQuestionText);
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                        mLives--;
+                        revealNextHangingImage();
+                        if (mLives <= 0) {
+                            gameOverLoss();
                         }
-                        mAText.setVisibility(View.INVISIBLE);
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
                     }
+                    mAText.setVisibility(View.INVISIBLE);
                 }
             }
         });
         mSText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(11)) {
-                    mHangmanGame.setPlayed(11);
-                    String newQuestionText = mHangmanGame.checkForLetter('s');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
+                String newQuestionText = mHangmanGame.checkForLetter('s');
+                if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                    gameOverWin();
+                } else {
+                    newQuestionText = addSpaces(newQuestionText);
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                        mLives--;
+                        revealNextHangingImage();
+                        if (mLives <= 0) {
+                            gameOverLoss();
                         }
-                        mSText.setVisibility(View.INVISIBLE);
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
                     }
+                    mSText.setVisibility(View.INVISIBLE);
                 }
             }
         });
         mDText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(12)) {
-                    mHangmanGame.setPlayed(12);
-                    String newQuestionText = mHangmanGame.checkForLetter('d');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
+                String newQuestionText = mHangmanGame.checkForLetter('d');
+                if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                    gameOverWin();
+                } else {
+                    newQuestionText = addSpaces(newQuestionText);
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                        mLives--;
+                        revealNextHangingImage();
+                        if (mLives <= 0) {
+                            gameOverLoss();
                         }
-                        mDText.setVisibility(View.INVISIBLE);
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
                     }
+                    mDText.setVisibility(View.INVISIBLE);
                 }
             }
         });
         mFText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(13)) {
-                    mHangmanGame.setPlayed(13);
-                    String newQuestionText = mHangmanGame.checkForLetter('f');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
+                String newQuestionText = mHangmanGame.checkForLetter('f');
+                if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                    gameOverWin();
+                } else {
+                    newQuestionText = addSpaces(newQuestionText);
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                        mLives--;
+                        revealNextHangingImage();
+                        if (mLives <= 0) {
+                            gameOverLoss();
                         }
-                        mFText.setVisibility(View.INVISIBLE);
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
                     }
+                    mFText.setVisibility(View.INVISIBLE);
                 }
             }
         });
         mGText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(14)) {
-                    mHangmanGame.setPlayed(14);
-                    String newQuestionText = mHangmanGame.checkForLetter('g');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
+                String newQuestionText = mHangmanGame.checkForLetter('g');
+                if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                    gameOverWin();
+                } else {
+                    newQuestionText = addSpaces(newQuestionText);
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                        mLives--;
+                        revealNextHangingImage();
+                        if (mLives <= 0) {
+                            gameOverLoss();
                         }
-                        mGText.setVisibility(View.INVISIBLE);
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
                     }
+                    mGText.setVisibility(View.INVISIBLE);
                 }
             }
         });
         mHText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(15)) {
-                    mHangmanGame.setPlayed(15);
-                    String newQuestionText = mHangmanGame.checkForLetter('h');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
+                String newQuestionText = mHangmanGame.checkForLetter('h');
+                if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                    gameOverWin();
+                } else {
+                    newQuestionText = addSpaces(newQuestionText);
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                        mLives--;
+                        revealNextHangingImage();
+                        if (mLives <= 0) {
+                            gameOverLoss();
                         }
-                        mHText.setVisibility(View.INVISIBLE);
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
                     }
+                    mHText.setVisibility(View.INVISIBLE);
                 }
             }
         });
         mJText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(16)) {
-                    mHangmanGame.setPlayed(16);
-                    String newQuestionText = mHangmanGame.checkForLetter('j');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
+                String newQuestionText = mHangmanGame.checkForLetter('j');
+                if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                    gameOverWin();
+                } else {
+                    newQuestionText = addSpaces(newQuestionText);
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                        mLives--;
+                        revealNextHangingImage();
+                        if (mLives <= 0) {
+                            gameOverLoss();
                         }
-                        mJText.setVisibility(View.INVISIBLE);
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
                     }
+                    mJText.setVisibility(View.INVISIBLE);
                 }
             }
         });
         mKText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(17)) {
-                    mHangmanGame.setPlayed(17);
-                    String newQuestionText = mHangmanGame.checkForLetter('k');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
+                String newQuestionText = mHangmanGame.checkForLetter('k');
+                if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                    gameOverWin();
+                } else {
+                    newQuestionText = addSpaces(newQuestionText);
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                        mLives--;
+                        revealNextHangingImage();
+                        if (mLives <= 0) {
+                            gameOverLoss();
                         }
-                        mKText.setVisibility(View.INVISIBLE);
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
                     }
+                    mKText.setVisibility(View.INVISIBLE);
                 }
             }
         });
         mLText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(18)) {
-                    mHangmanGame.setPlayed(18);
-                    String newQuestionText = mHangmanGame.checkForLetter('l');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
+                String newQuestionText = mHangmanGame.checkForLetter('l');
+                if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                    gameOverWin();
+                } else {
+                    newQuestionText = addSpaces(newQuestionText);
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                        mLives--;
+                        revealNextHangingImage();
+                        if (mLives <= 0) {
+                            gameOverLoss();
                         }
-                        mLText.setVisibility(View.INVISIBLE);
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
                     }
+                    mLText.setVisibility(View.INVISIBLE);
                 }
             }
         });
         mZText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(19)) {
-                    mHangmanGame.setPlayed(19);
-                    String newQuestionText = mHangmanGame.checkForLetter('z');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
+                String newQuestionText = mHangmanGame.checkForLetter('z');
+                if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                    gameOverWin();
+                } else {
+                    newQuestionText = addSpaces(newQuestionText);
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                        mLives--;
+                        revealNextHangingImage();
+                        if (mLives <= 0) {
+                            gameOverLoss();
                         }
-                        mZText.setVisibility(View.INVISIBLE);
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
                     }
+                    mZText.setVisibility(View.INVISIBLE);
                 }
             }
         });
         mXText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(20)) {
-                    mHangmanGame.setPlayed(20);
-                    String newQuestionText = mHangmanGame.checkForLetter('x');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
+                String newQuestionText = mHangmanGame.checkForLetter('x');
+                if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                    gameOverWin();
+                } else {
+                    newQuestionText = addSpaces(newQuestionText);
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                        mLives--;
+                        revealNextHangingImage();
+                        if (mLives <= 0) {
+                            gameOverLoss();
                         }
-                        mXText.setVisibility(View.INVISIBLE);
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
                     }
+                    mXText.setVisibility(View.INVISIBLE);
                 }
             }
         });
         mCText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(21)) {
-                    mHangmanGame.setPlayed(21);
-                    String newQuestionText = mHangmanGame.checkForLetter('c');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
+                String newQuestionText = mHangmanGame.checkForLetter('c');
+                if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                    gameOverWin();
+                } else {
+                    newQuestionText = addSpaces(newQuestionText);
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                        mLives--;
+                        revealNextHangingImage();
+                        if (mLives <= 0) {
+                            gameOverLoss();
                         }
-                        mCText.setVisibility(View.INVISIBLE);
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
                     }
+                    mCText.setVisibility(View.INVISIBLE);
                 }
             }
         });
         mVText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(22)) {
-                    mHangmanGame.setPlayed(22);
-                    String newQuestionText = mHangmanGame.checkForLetter('v');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
+                String newQuestionText = mHangmanGame.checkForLetter('v');
+                if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                    gameOverWin();
+                } else {
+                    newQuestionText = addSpaces(newQuestionText);
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                        mLives--;
+                        revealNextHangingImage();
+                        if (mLives <= 0) {
+                            gameOverLoss();
                         }
-                        mVText.setVisibility(View.INVISIBLE);
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
                     }
+                    mVText.setVisibility(View.INVISIBLE);
                 }
             }
         });
         mBText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(23)) {
-                    mHangmanGame.setPlayed(23);
-                    String newQuestionText = mHangmanGame.checkForLetter('b');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
+                String newQuestionText = mHangmanGame.checkForLetter('b');
+                if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                    gameOverWin();
+                } else {
+                    newQuestionText = addSpaces(newQuestionText);
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                        mLives--;
+                        revealNextHangingImage();
+                        if (mLives <= 0) {
+                            gameOverLoss();
                         }
-                        mBText.setVisibility(View.INVISIBLE);
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
                     }
+                    mBText.setVisibility(View.INVISIBLE);
                 }
             }
         });
         mNText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(24)) {
-                    mHangmanGame.setPlayed(24);
-                    String newQuestionText = mHangmanGame.checkForLetter('n');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
+                String newQuestionText = mHangmanGame.checkForLetter('n');
+                if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                    gameOverWin();
+                } else {
+                    newQuestionText = addSpaces(newQuestionText);
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                        mLives--;
+                        revealNextHangingImage();
+                        if (mLives <= 0) {
+                            gameOverLoss();
                         }
-                        mNText.setVisibility(View.INVISIBLE);
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
                     }
+                    mNText.setVisibility(View.INVISIBLE);
                 }
             }
         });
         mMText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(25)) {
-                    mHangmanGame.setPlayed(25);
-                    String newQuestionText = mHangmanGame.checkForLetter('m');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
+                String newQuestionText = mHangmanGame.checkForLetter('m');
+                if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                    gameOverWin();
+                } else {
+                    newQuestionText = addSpaces(newQuestionText);
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                        mLives--;
+                        revealNextHangingImage();
+                        if (mLives <= 0) {
+                            gameOverLoss();
                         }
-                        mMText.setVisibility(View.INVISIBLE);
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
                     }
+                    mMText.setVisibility(View.INVISIBLE);
                 }
             }
         });
         mEnieText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(26)) {
-                    mHangmanGame.setPlayed(26);
-                    String newQuestionText = mHangmanGame.checkForLetter('ñ');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
+                String newQuestionText = mHangmanGame.checkForLetter('ñ');
+                if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                    gameOverWin();
+                } else {
+                    newQuestionText = addSpaces(newQuestionText);
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                        mLives--;
+                        revealNextHangingImage();
+                        if (mLives <= 0) {
+                            gameOverLoss();
                         }
-                        mEnieText.setVisibility(View.INVISIBLE);
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
                     }
+                    mEnieText.setVisibility(View.INVISIBLE);
                 }
             }
         });
         mAAccentText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(27)) {
-                    mHangmanGame.setPlayed(27);
-                    String newQuestionText = mHangmanGame.checkForLetter('á');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
+                String newQuestionText = mHangmanGame.checkForLetter('á');
+                if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                    gameOverWin();
+                } else {
+                    newQuestionText = addSpaces(newQuestionText);
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                        mLives--;
+                        revealNextHangingImage();
+                        if (mLives <= 0) {
+                            gameOverLoss();
                         }
-                        mAAccentText.setVisibility(View.INVISIBLE);
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
                     }
+                    mAAccentText.setVisibility(View.INVISIBLE);
                 }
             }
         });
         mEAccentText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(28)) {
-                    mHangmanGame.setPlayed(28);
-                    String newQuestionText = mHangmanGame.checkForLetter('é');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
+                String newQuestionText = mHangmanGame.checkForLetter('é');
+                if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                    gameOverWin();
+                } else {
+                    newQuestionText = addSpaces(newQuestionText);
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                        mLives--;
+                        revealNextHangingImage();
+                        if (mLives <= 0) {
+                            gameOverLoss();
                         }
-                        mEAccentText.setVisibility(View.INVISIBLE);
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
                     }
+                    mEAccentText.setVisibility(View.INVISIBLE);
                 }
             }
         });
         mIAccentText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(29)) {
-                    mHangmanGame.setPlayed(29);
-                    String newQuestionText = mHangmanGame.checkForLetter('í');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
+                String newQuestionText = mHangmanGame.checkForLetter('í');
+                if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                    gameOverWin();
+                } else {
+                    newQuestionText = addSpaces(newQuestionText);
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                        mLives--;
+                        revealNextHangingImage();
+                        if (mLives <= 0) {
+                            gameOverLoss();
                         }
-                        mIAccentText.setVisibility(View.INVISIBLE);
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
                     }
+                    mIAccentText.setVisibility(View.INVISIBLE);
                 }
             }
         });
         mOAccentText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(30)) {
-                    mHangmanGame.setPlayed(30);
-                    String newQuestionText = mHangmanGame.checkForLetter('ó');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
+                String newQuestionText = mHangmanGame.checkForLetter('ó');
+                if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                    gameOverWin();
+                } else {
+                    newQuestionText = addSpaces(newQuestionText);
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                        mLives--;
+                        revealNextHangingImage();
+                        if (mLives <= 0) {
+                            gameOverLoss();
                         }
-                        mOAccentText.setVisibility(View.INVISIBLE);
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
                     }
+                    mOAccentText.setVisibility(View.INVISIBLE);
                 }
             }
         });
         mUAccentText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mHangmanGame.isPLayed(31)) {
-                    mHangmanGame.setPlayed(31);
-                    String newQuestionText = mHangmanGame.checkForLetter('ú');
-                    if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
-                        gameOverWin();
-                    } else {
-                        newQuestionText = addSpaces(newQuestionText);
-                        if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
-                            mLives--;
-                            revealNextHangingImage();
-                            if (mLives <= 0) {
-                                gameOverLoss();
-                            }
-                        } else {
-                            mHangmanTextView.setText(newQuestionText);
+                String newQuestionText = mHangmanGame.checkForLetter('ú');
+                if (newQuestionText.equalsIgnoreCase(mHangmanGame.getHangmanAnswerText())) {
+                    gameOverWin();
+                } else {
+                    newQuestionText = addSpaces(newQuestionText);
+                    if (newQuestionText.equalsIgnoreCase(mHangmanTextView.getText().toString())) {
+                        mLives--;
+                        revealNextHangingImage();
+                        if (mLives <= 0) {
+                            gameOverLoss();
                         }
-                        mUAccentText.setVisibility(View.INVISIBLE);
+                    } else {
+                        mHangmanTextView.setText(newQuestionText);
                     }
+                    mUAccentText.setVisibility(View.INVISIBLE);
                 }
             }
         });

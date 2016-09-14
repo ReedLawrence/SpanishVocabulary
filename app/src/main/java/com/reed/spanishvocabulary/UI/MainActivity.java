@@ -28,17 +28,17 @@ public class MainActivity extends AppCompatActivity {
         Button hangmanButton = (Button) findViewById(R.id.hangmanButton);
 
         final List<String> chapters = new ArrayList<>();
-        chapters.add("Lesson 1");
-        chapters.add("Lesson 2");
-        chapters.add("Lesson 3");
-        chapters.add("Lesson 4");
-        chapters.add("Lesson 5");
-        chapters.add("Lesson 6");
-        chapters.add("Lesson 7");
-        chapters.add("Lesson 8");
-        chapters.add("Lesson 9");
-        chapters.add("Lesson 10");
-        chapters.add("Lesson 11");
+        chapters.add("Palabras básicas");
+        chapters.add("La iglesia, la casa y el colegio");
+        chapters.add("Interrogativos, palabras con ser y estar");
+        chapters.add("El centro, los números y adjetivos posesivos");
+        chapters.add("Verbos - ar");
+        chapters.add("Verbos - er, Verbos - ir");
+        chapters.add("El tiempo, el aeropuerto y los deportes");
+        chapters.add("¿Qué voy a hacer?, ropa, colores y comida");
+        chapters.add("¿Cómo es?, verbos reflexivos y el cuerpo");
+        chapters.add("Los quehaceres, el correo, el pretérito");
+        chapters.add("el pretérito");
 
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, chapters);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

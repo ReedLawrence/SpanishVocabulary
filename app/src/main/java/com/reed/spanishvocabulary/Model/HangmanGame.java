@@ -10,7 +10,6 @@ public class HangmanGame {
     private String mHangmanAnswerText;
     private String mHangmanQuestionText;
     private VocabBook mVocabBook;
-    private Boolean[] mPlayed;
     private int mChapter;
 
     public HangmanGame(int chapter) {
@@ -18,8 +17,6 @@ public class HangmanGame {
         mVocabBook = new VocabBook();
         generateHangmanAnswerText(chapter);
         generateHangmanQuestionText();
-        mPlayed = new Boolean[32];
-        clearAllPLayed();
     }
 
     private void generateHangmanQuestionText() {
@@ -64,32 +61,30 @@ public class HangmanGame {
     public void resetGame() {
         generateHangmanAnswerText(mChapter);
         generateHangmanQuestionText();
-        clearAllPLayed();
     }
 
     public void generateHangmanAnswerText(int chapter) {
         mHangmanAnswerText = mVocabBook.getRandomVocabWord(chapter).getSpanishTranslation();
+        //Eliminate all vocabulary that contains an "_" in the hangman game
+        /*
+        Unnecessary with second test
+        if (mHangmanAnswerText.contains("_")) {
+            generateHangmanAnswerText(chapter);
+        }
+        */
+        //Eliminate Phrases longer than 2 words
+        String[] wordTest = mHangmanAnswerText.split(" ");
+        if (wordTest.length > 2) {
+            generateHangmanAnswerText(chapter);
+        }
     }
 
     public String getHangmanAnswerText() {
         return mHangmanAnswerText;
     }
 
-    public void setPlayed(int index) {
-        mPlayed[index] = true;
-    }
-
-    public void clearAllPLayed() {
-        for(int i = 0; i<mPlayed.length; i++) {
-            mPlayed[i] = false;
-        }
-    }
-
     public String getHangmanQuestionText() {
         return mHangmanQuestionText;
     }
 
-    public Boolean isPLayed(int index) {
-        return mPlayed[index];
-    }
 }
